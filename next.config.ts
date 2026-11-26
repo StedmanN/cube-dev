@@ -11,6 +11,8 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  // Permit this development server to serve Next.js assets through the tunnel.
+  allowedDevOrigins: ["dev-cube.scn1993.com"],
   output: "standalone",
   // An integration run uses a separate compiler/output lock so it cannot
   // interfere with a developer's already-running CUBE server.
