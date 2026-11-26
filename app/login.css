@@ -1,0 +1,619 @@
+/* ============================================================
+   CUBE LOGIN PAGE
+   Centralized Utility and Billing Environment
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+
+/* ============================================================
+   PAGE
+   ============================================================ */
+
+.cube-login-page {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  color: #111827;
+
+  background:
+    radial-gradient(
+      circle at 75% 20%,
+      rgba(123, 33, 130, 0.08),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(52, 42, 131, 0.06),
+      transparent 35%
+    ),
+    #f8f8fb;
+}
+
+
+/* ============================================================
+   TOP BAR
+   Matches the CUBE application header
+   ============================================================ */
+
+.cube-login-topbar {
+  height: 64px;
+
+  flex: 0 0 64px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 28px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      100deg,
+      #7b2182 0%,
+      #72217d 55%,
+      #67216e 100%
+    );
+
+  box-shadow:
+    0 2px 8px
+    rgba(46, 21, 52, 0.16);
+}
+
+
+/* ============================================================
+   BRAND
+   ============================================================ */
+
+.cube-login-brand {
+  display: flex;
+  align-items: center;
+
+  gap: 11px;
+}
+
+.cube-login-brand-icon {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.28);
+
+  border-radius: 7px;
+
+  background:
+    rgba(255, 255, 255, 0.1);
+}
+
+.cube-login-brand > div:last-child {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+}
+
+.cube-login-brand-name {
+  font-size: 17px;
+  font-weight: 750;
+
+  letter-spacing: 0.04em;
+}
+
+.cube-login-brand-divider {
+  color:
+    rgba(255, 255, 255, 0.5);
+}
+
+.cube-login-brand-org {
+  color:
+    rgba(255, 255, 255, 0.82);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   SECURITY LABEL
+   ============================================================ */
+
+.cube-login-security-label {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color:
+    rgba(255, 255, 255, 0.9);
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   CONTENT
+   ============================================================ */
+
+.cube-login-content {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 46px 24px 30px;
+}
+
+
+/* ============================================================
+   LOGIN CARD
+   ============================================================ */
+
+.cube-login-card {
+  width: min(
+    100%,
+    500px
+  );
+
+  overflow: hidden;
+
+  border: 1px solid #dfe1e7;
+  border-radius: 13px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 18px 45px
+      rgba(15, 23, 42, 0.08),
+    0 4px 14px
+      rgba(15, 23, 42, 0.05);
+}
+
+
+/* ============================================================
+   CARD HEADER
+   ============================================================ */
+
+.cube-login-card-header {
+  padding:
+    38px 42px
+    30px;
+
+  text-align: center;
+
+  border-bottom:
+    1px solid #ececf1;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #fdfbfe 100%
+    );
+}
+
+
+/* ============================================================
+   LOGO
+   ============================================================ */
+
+.cube-login-logo {
+  width: 62px;
+  height: 62px;
+
+  margin:
+    0 auto
+    19px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 14px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      #342a83 0%,
+      #72217d 100%
+    );
+
+  box-shadow:
+    0 8px 20px
+    rgba(83, 37, 125, 0.2);
+}
+
+
+/* ============================================================
+   TITLE
+   ============================================================ */
+
+.cube-login-eyebrow {
+  margin:
+    0 0 8px;
+
+  color: #7b2182;
+
+  font-size: 11px;
+  font-weight: 750;
+
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
+}
+
+.cube-login-card-header h1 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 27px;
+  font-weight: 750;
+
+  line-height: 1.17;
+
+  letter-spacing: -0.5px;
+}
+
+.cube-login-acronym {
+  margin-top: 9px;
+
+  color: #67216e;
+
+  font-size: 14px;
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+}
+
+.cube-login-description {
+  max-width: 360px;
+
+  margin:
+    16px auto
+    0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+
+  line-height: 1.55;
+}
+
+
+/* ============================================================
+   AUTHENTICATION AREA
+   ============================================================ */
+
+.cube-login-auth {
+  padding:
+    26px 42px
+    24px;
+}
+
+.cube-login-auth-heading {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 12px;
+
+  margin-bottom: 20px;
+
+  color: #67216e;
+}
+
+.cube-login-auth-heading > svg {
+  flex: 0 0 auto;
+
+  margin-top: 2px;
+}
+
+.cube-login-auth-heading h2 {
+  margin:
+    0 0 4px;
+
+  color: #1f2937;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.cube-login-auth-heading p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 12px;
+
+  line-height: 1.45;
+}
+
+
+/* ============================================================
+   CAC BUTTON
+   ============================================================ */
+
+.cube-login-button {
+  width: 100%;
+  min-height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  border: 0;
+  border-radius: 7px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      110deg,
+      #342a83 0%,
+      #662580 100%
+    );
+
+  font: inherit;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 14px
+    rgba(52, 42, 131, 0.18);
+
+  transition:
+    transform 0.15s ease,
+    filter 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.cube-login-button:hover {
+  filter: brightness(1.08);
+
+  box-shadow:
+    0 7px 18px
+    rgba(52, 42, 131, 0.22);
+}
+
+.cube-login-button:active {
+  transform:
+    translateY(1px);
+}
+
+.cube-login-button:focus-visible {
+  outline: 3px solid
+    rgba(123, 33, 130, 0.22);
+
+  outline-offset: 3px;
+}
+
+
+/* ============================================================
+   SECURITY INFORMATION
+   ============================================================ */
+
+.cube-login-security {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 10px;
+
+  padding:
+    17px 42px
+    19px;
+
+  border-top:
+    1px solid #ececf1;
+
+  color: #5f6470;
+
+  background: #fafafa;
+}
+
+.cube-login-security svg {
+  flex: 0 0 auto;
+
+  margin-top: 2px;
+
+  color: #67216e;
+}
+
+.cube-login-security p {
+  margin: 0;
+
+  font-size: 11px;
+
+  line-height: 1.55;
+}
+
+
+/* ============================================================
+   PAGE FOOTER
+   ============================================================ */
+
+.cube-login-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 22px;
+
+  color: #7a7f89;
+
+  font-size: 11px;
+}
+
+.cube-login-footer-dot {
+  color: #b2b5bc;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 600px) {
+  .cube-login-topbar {
+    height: 56px;
+    flex-basis: 56px;
+
+    padding:
+      0 16px;
+  }
+
+  .cube-login-security-label span {
+    display: none;
+  }
+
+  .cube-login-content {
+    justify-content: flex-start;
+
+    padding:
+      30px 16px
+      22px;
+  }
+
+  .cube-login-card-header {
+    padding:
+      30px 24px
+      25px;
+  }
+
+  .cube-login-card-header h1 {
+    font-size: 23px;
+  }
+
+  .cube-login-auth {
+    padding:
+      23px 24px;
+  }
+
+  .cube-login-security {
+    padding:
+      16px 24px;
+  }
+
+  .cube-login-footer {
+    flex-direction: column;
+
+    gap: 3px;
+
+    text-align: center;
+  }
+
+  .cube-login-footer-dot {
+    display: none;
+  }
+}
+
+
+/* ============================================================
+   1920x1080 DESKTOP DENSITY
+   Matches the compact sizing used throughout CUBE
+   ============================================================ */
+
+@media (
+  min-width: 1200px
+) and (
+  max-width: 1920px
+) {
+  .cube-login-topbar {
+    height: 54px;
+    flex-basis: 54px;
+
+    padding:
+      0 18px;
+  }
+
+  .cube-login-brand-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cube-login-brand-name {
+    font-size: 15px;
+  }
+
+  .cube-login-content {
+    padding:
+      30px 24px
+      20px;
+  }
+
+  .cube-login-card {
+    width:
+      min(
+        100%,
+        455px
+      );
+  }
+
+  .cube-login-card-header {
+    padding:
+      29px 36px
+      23px;
+  }
+
+  .cube-login-logo {
+    width: 52px;
+    height: 52px;
+
+    margin-bottom: 15px;
+  }
+
+  .cube-login-card-header h1 {
+    font-size: 23px;
+  }
+
+  .cube-login-description {
+    margin-top: 12px;
+
+    font-size: 12px;
+  }
+
+  .cube-login-auth {
+    padding:
+      21px 36px
+      20px;
+  }
+
+  .cube-login-auth-heading {
+    margin-bottom: 16px;
+  }
+
+  .cube-login-button {
+    min-height: 42px;
+
+    font-size: 13px;
+  }
+
+  .cube-login-security {
+    padding:
+      14px 36px
+      16px;
+  }
+
+  .cube-login-security p {
+    font-size: 10px;
+  }
+}

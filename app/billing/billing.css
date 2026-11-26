@@ -1,0 +1,2785 @@
+/* Billing worksheet and navigation content styles. The shared .ce-* shell
+   is defined once in app/app-shell.css and loaded by the root layout. */
+
+.billing-title-row {
+  min-height: 105px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.billing-title-row h1 {
+  margin: 0;
+  font-size: 34px;
+  line-height: 1.1;
+  letter-spacing: -0.8px;
+}
+
+.bd-eyebrow {
+  margin: 0 0 6px;
+  color: #7b2182;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.bd-subtitle {
+  margin: 8px 0 0;
+  color: #4b5563;
+  font-size: 16px;
+}
+
+.bd-workspace {
+  overflow: visible;
+  border: 1px solid #dfe1e7;
+  border-radius: 11px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+}
+
+.bd-toolbar {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 10px 14px;
+  border-bottom: 1px solid #e2e4e9;
+  background: #fbfbfd;
+}
+
+.bd-tabs {
+  min-width: 0;
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  padding: 2px;
+  scrollbar-width: thin;
+}
+
+.bd-tab {
+  min-height: 40px;
+  flex: 0 0 auto;
+  padding: 0 14px;
+  border: 1px solid #d9dce3;
+  border-radius: 7px;
+  color: #273148;
+  background: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bd-tab:hover {
+  border-color: #8a4a92;
+  color: #71217d;
+}
+
+.bd-tab-active {
+  border-color: #72217d;
+  color: #ffffff;
+  background: linear-gradient(110deg, #342a83 0%, #662580 100%);
+  box-shadow: 0 4px 12px rgba(82, 37, 124, 0.18);
+}
+
+.bd-tab-active:hover {
+  color: #ffffff;
+}
+
+.bd-add-button {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 7px;
+  color: #ffffff;
+  background: linear-gradient(110deg, #342a83 0%, #662580 100%);
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(52, 42, 131, 0.18);
+}
+
+.bd-add-button:hover:not(:disabled) {
+  filter: brightness(1.08);
+}
+
+.bd-add-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+@media (min-width: 1200px) and (max-width: 1920px) {
+  .billing-title-row {
+    min-height: 76px;
+    gap: 18px;
+  }
+
+  .billing-title-row h1 {
+    font-size: 27px;
+    letter-spacing: -0.5px;
+  }
+
+  .bd-eyebrow {
+    margin-bottom: 4px;
+    font-size: 10px;
+  }
+
+  .bd-subtitle {
+    margin-top: 5px;
+    font-size: 13px;
+  }
+
+  .bd-workspace {
+    border-radius: 8px;
+  }
+
+  .bd-toolbar {
+    min-height: 52px;
+    padding: 7px 10px;
+  }
+
+  .bd-tab {
+    min-height: 32px;
+    padding: 0 10px;
+    border-radius: 5px;
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 1921px) {
+  .billing-title-row h1 {
+    font-size: clamp(34px, 1.8vw, 42px);
+  }
+}
+
+/* ============================================================
+
+   BILLING CONTENT
+
+============================================================ */
+
+.billing-content {
+
+  padding: 14px;
+
+}
+
+/* ============================================================
+
+   DIRECT RATE ENTRY CONTROL BAR
+
+============================================================ */
+
+.billing-control-bar {
+
+  min-height: 70px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 18px;
+
+  padding: 2px 2px 14px;
+
+}
+
+.billing-control-eyebrow {
+
+  margin: 0 0 3px;
+
+  color: #7b2182;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.08em;
+
+  text-transform: uppercase;
+
+}
+
+.billing-control-bar h2 {
+
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 19px;
+
+}
+
+.billing-control-bar p {
+
+  margin: 4px 0 0;
+
+  color: #6b7280;
+
+  font-size: 11px;
+
+}
+
+.billing-control-actions {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+}
+
+.billing-status-badge {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 28px;
+
+  padding: 0 10px;
+
+  border: 1px solid #e1d6e5;
+
+  border-radius: 999px;
+
+  color: #72217d;
+
+  background: #faf7fb;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+}
+
+.billing-save-button {
+
+  min-height: 32px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 0 11px;
+
+  border: 1px solid #72217d;
+
+  border-radius: 5px;
+
+  color: #ffffff;
+
+  background: linear-gradient(
+
+    110deg,
+
+    #342a83 0%,
+
+    #662580 100%
+
+  );
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+}
+
+.billing-selector-bar {
+
+  display: grid;
+
+  grid-template-columns:
+
+    minmax(180px, 260px)
+
+    minmax(180px, 300px);
+
+  gap: 12px;
+
+  margin-bottom: 12px;
+
+  padding: 10px 12px;
+
+  border: 1px solid #dfe2e8;
+
+  border-radius: 7px;
+
+  background: #f8f9fb;
+
+}
+
+.billing-selector-bar label {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+}
+
+.billing-selector-bar label > span {
+
+  color: #374151;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+}
+
+.billing-selector-bar input,
+
+.billing-selector-bar select {
+
+  width: 100%;
+
+  height: 34px;
+
+  padding: 0 8px;
+
+  border: 1px solid #d5d8df;
+
+  border-radius: 5px;
+
+  outline: 0;
+
+  color: #111827;
+
+  background: #ffffff;
+
+  font-size: 11px;
+
+}
+
+/* ============================================================
+
+   3556 WORKSHEET SHELL
+
+============================================================ */
+
+.rate-sheet-shell {
+
+  overflow-x: auto;
+
+  border: 1px solid #cfd3da;
+
+  border-radius: 7px;
+
+  background: #eef0f4;
+
+}
+
+.rate-sheet {
+
+  min-width: 1180px;
+
+  background: #ffffff;
+
+}
+
+.rate-sheet-title {
+
+  padding: 10px 14px;
+
+  border-bottom: 1px solid #aeb4be;
+
+  color: #ffffff;
+
+  background: linear-gradient(
+
+    110deg,
+
+    #342a83 0%,
+
+    #662580 100%
+
+  );
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.025em;
+
+  text-align: center;
+
+}
+
+/* ============================================================
+
+   WORKSHEET HEADER
+
+============================================================ */
+
+.rate-header-grid {
+
+  display: grid;
+
+  border-bottom: 1px solid #aeb4be;
+
+}
+
+.rate-header-grid-top {
+
+  grid-template-columns:
+
+    1.35fr
+
+    0.8fr
+
+    0.45fr
+
+    1.25fr
+
+    0.8fr;
+
+}
+
+.rate-header-grid-bottom {
+
+  grid-template-columns:
+
+    2.15fr
+
+    1.2fr
+
+    0.55fr
+
+    0.85fr;
+
+}
+
+.worksheet-field {
+
+  min-width: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  border-right: 1px solid #b8bdc6;
+
+}
+
+.worksheet-field:last-child {
+
+  border-right: 0;
+
+}
+
+.worksheet-field > span {
+
+  min-height: 31px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 5px 7px;
+
+  border-bottom: 1px solid #d4d7dd;
+
+  color: #374151;
+
+  background: #f2f3f6;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+}
+
+.worksheet-field input {
+
+  width: 100%;
+
+  height: 37px;
+
+  border: 0;
+
+  outline: 0;
+
+  padding: 0 8px;
+
+  color: #111827;
+
+  background: #ffffff;
+
+  font-size: 11px;
+
+}
+
+.worksheet-field input:focus {
+
+  box-shadow:
+
+    inset 0 0 0 2px
+
+    rgba(123, 33, 130, 0.28);
+
+}
+
+.worksheet-display-field {
+
+  background: #f7f8fa;
+
+}
+
+.worksheet-display-value {
+
+  width: 100%;
+
+  min-height: 37px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 8px;
+
+  color: #111827;
+
+  background: #f7f8fa;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+}
+
+/* ============================================================
+
+   SECTION TITLES
+
+============================================================ */
+
+.worksheet-section-title {
+
+  min-height: 33px;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 0 10px;
+
+  border-top: 1px solid #9ea5b0;
+
+  border-bottom: 1px solid #9ea5b0;
+
+  color: #ffffff;
+
+  background: #253451;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.035em;
+
+}
+
+.data-period-row {
+
+  padding: 8px 10px;
+
+  border-bottom: 1px solid #cfd3da;
+
+  background: #f7f8fa;
+
+}
+
+.data-period-row label {
+
+  display: grid;
+
+  grid-template-columns: 160px 1fr;
+
+  align-items: center;
+
+  gap: 8px;
+
+}
+
+.data-period-row span {
+
+  color: #374151;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+}
+
+.data-period-row input {
+
+  width: 100%;
+
+  height: 31px;
+
+  padding: 0 8px;
+
+  border: 1px solid #d0d4db;
+
+  border-radius: 4px;
+
+  outline: 0;
+
+  background: #ffffff;
+
+  font-size: 10px;
+
+}
+
+/* ============================================================
+
+   WORKSHEET TABLES
+
+============================================================ */
+
+.worksheet-table-shell {
+
+  overflow-x: auto;
+
+}
+
+.worksheet-table {
+
+  width: 100%;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+
+}
+
+.worksheet-table th,
+
+.worksheet-table td {
+
+  border-right: 1px solid #c7cbd2;
+
+  border-bottom: 1px solid #d3d6dc;
+
+}
+
+.worksheet-table tr > \*:last-child {
+
+  border-right: 0;
+
+}
+
+.worksheet-table thead th {
+
+  padding: 7px 7px;
+
+  color: #273148;
+
+  background: #e9ebef;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  line-height: 1.25;
+
+  text-align: left;
+
+  text-transform: uppercase;
+
+}
+
+.data-input-table .section-column {
+
+  width: 18%;
+
+}
+
+.data-input-table th:nth-child(2) {
+
+  width: 15%;
+
+}
+
+.data-input-table th:nth-child(3) {
+
+  width: 13%;
+
+}
+
+.data-input-table th:nth-child(4) {
+
+  width: 14%;
+
+}
+
+.data-input-table th:nth-child(5) {
+
+  width: 11%;
+
+}
+
+.data-input-table th:nth-child(6) {
+
+  width: 24%;
+
+}
+
+.data-input-table .action-column {
+
+  width: 52px;
+
+}
+
+/* ============================================================
+
+   PARENT ROWS
+
+============================================================ */
+
+.worksheet-parent-row th {
+
+  padding: 7px 8px;
+
+  color: #111827;
+
+  background: #f0edf4;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  text-align: left;
+
+}
+
+.worksheet-parent-row td {
+
+  padding: 5px 7px;
+
+  background: #faf9fb;
+
+}
+
+.worksheet-parent-help {
+
+  color: #7b8190;
+
+  font-size: 9px;
+
+  font-style: italic;
+
+}
+
+.worksheet-add-row {
+
+  min-height: 27px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 4px;
+
+  padding: 0 8px;
+
+  border: 1px solid #72217d;
+
+  border-radius: 4px;
+
+  color: #72217d;
+
+  background: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+}
+
+.worksheet-add-row:hover {
+
+  color: #ffffff;
+
+  background: #72217d;
+
+}
+
+/* ============================================================
+
+   ENTRY ROWS
+
+============================================================ */
+
+.worksheet-entry-row td {
+
+  padding: 4px;
+
+  vertical-align: top;
+
+  background: #ffffff;
+
+}
+
+.worksheet-entry-row input,
+
+.worksheet-entry-row textarea {
+
+  width: 100%;
+
+  border: 1px solid #d5d8df;
+
+  border-radius: 3px;
+
+  outline: 0;
+
+  color: #111827;
+
+  background: #ffffff;
+
+  font-size: 9px;
+
+}
+
+.worksheet-entry-row input {
+
+  height: 29px;
+
+  padding: 0 6px;
+
+}
+
+.worksheet-entry-row textarea {
+
+  min-height: 42px;
+
+  padding: 5px 6px;
+
+  resize: vertical;
+
+}
+
+.worksheet-entry-row input:focus,
+
+.worksheet-entry-row textarea:focus {
+
+  border-color: #7b2182;
+
+  box-shadow:
+
+    0 0 0 1px
+
+    rgba(123, 33, 130, 0.12);
+
+}
+
+.worksheet-action-cell {
+
+  text-align: center;
+
+}
+
+.worksheet-delete-row {
+
+  width: 27px;
+
+  height: 27px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin: 1px auto 0;
+
+  border: 1px solid #fecaca;
+
+  border-radius: 4px;
+
+  color: #b91c1c;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+}
+
+.worksheet-delete-row:hover {
+
+  background: #fef2f2;
+
+}
+
+/* ============================================================
+
+   SUMMARY ROWS
+
+============================================================ */
+
+.worksheet-summary-row th,
+
+.worksheet-summary-row td {
+
+  padding: 7px 8px;
+
+  color: #273148;
+
+  background: #f6f7f9;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+}
+
+.worksheet-summary-row th {
+
+  text-align: left;
+
+}
+
+.worksheet-strong-summary th,
+
+.worksheet-strong-summary td {
+
+  color: #111827;
+
+  background: #e9ebef;
+
+  font-weight: 900;
+
+}
+
+/* ============================================================
+
+   DISTRIBUTION / O&M
+
+============================================================ */
+
+.om-table th:nth-child(1) {
+
+  width: 22%;
+
+}
+
+.om-table th:nth-child(2) {
+
+  width: 18%;
+
+}
+
+.om-table th:nth-child(3) {
+
+  width: 13%;
+
+}
+
+.om-table th:nth-child(4) {
+
+  width: 12%;
+
+}
+
+.om-table th:nth-child(5) {
+
+  width: 25%;
+
+}
+
+.om-table th:nth-child(6) {
+
+  width: 90px;
+
+}
+
+.om-table thead th:last-child {
+
+  text-align: center;
+
+}
+
+.worksheet-empty-row td {
+
+  height: 45px;
+
+  padding: 10px;
+
+  color: #7b8190;
+
+  background: #fafafd;
+
+  font-size: 9px;
+
+  font-style: italic;
+
+  text-align: center;
+
+}
+
+/* ============================================================
+
+   RATE CALCULATIONS
+
+============================================================ */
+
+.rate-category-note {
+
+  padding: 7px 10px;
+
+  border-bottom: 1px solid #cfd3da;
+
+  color: #5d6572;
+
+  background: #f8f8fa;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+}
+
+.rate-calculation-table .rate-component-column {
+
+  width: 21%;
+
+}
+
+.rate-calculation-table thead th:not(
+
+  :first-child
+
+) {
+
+  width: 15.8%;
+
+  text-align: center;
+
+  text-transform: none;
+
+}
+
+.rate-calculation-table thead strong {
+
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #542060;
+
+  font-size: 11px;
+
+}
+
+.rate-calculation-table thead span {
+
+  display: block;
+
+  min-height: 30px;
+
+  color: #4b5563;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  line-height: 1.25;
+
+}
+
+.rate-calculation-table tbody th {
+
+  padding: 7px 8px;
+
+  color: #273148;
+
+  background: #f4f5f7;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  text-align: left;
+
+}
+
+.calculated-cell {
+
+  padding: 4px;
+
+  background: #fbfbfc;
+
+}
+
+.calculated-cell input {
+
+  width: 100%;
+
+  height: 29px;
+
+  padding: 0 6px;
+
+  border: 1px solid #d7dae0;
+
+  border-radius: 3px;
+
+  outline: 0;
+
+  color: #4b5563;
+
+  background: #f1f2f4;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  text-align: right;
+
+}
+
+/* ============================================================
+
+   SALES RATES
+
+============================================================ */
+
+.sales-rate-table th:nth-child(1) {
+
+  width: 43%;
+
+}
+
+.sales-rate-table th:nth-child(2) {
+
+  width: 22%;
+
+}
+
+.sales-rate-table th:nth-child(3) {
+
+  width: 35%;
+
+}
+
+.sales-rate-table tbody th {
+
+  padding: 7px 8px;
+
+  color: #273148;
+
+  background: #f4f5f7;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  text-align: left;
+
+}
+
+.sales-rate-table textarea {
+
+  width: 100%;
+
+  min-height: 34px;
+
+  padding: 5px 6px;
+
+  border: 1px solid #d5d8df;
+
+  border-radius: 3px;
+
+  outline: 0;
+
+  resize: vertical;
+
+  font-size: 9px;
+
+}
+
+/* ============================================================
+
+   PLACEHOLDER TABS
+
+============================================================ */
+
+.billing-placeholder {
+
+  min-height: 430px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #72217d;
+
+  text-align: center;
+
+}
+
+.billing-placeholder h3 {
+
+  margin: 9px 0 4px;
+
+  color: #111827;
+
+}
+
+.billing-placeholder p {
+
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 11px;
+
+}
+
+/* ============================================================
+
+   RESPONSIVE
+
+============================================================ */
+
+@media (max-width: 900px) {
+
+  .billing-control-bar {
+
+    align-items: flex-start;
+
+    flex-direction: column;
+
+  }
+
+  .billing-selector-bar {
+
+    grid-template-columns: 1fr;
+
+  }
+
+}
+
+/* ============================================================
+
+   3556 HISTORY
+
+============================================================ */
+
+.history-table-shell {
+
+  overflow-x: auto;
+
+  border: 1px solid #dfe2e8;
+
+  border-radius: 7px;
+
+  background: #ffffff;
+
+}
+
+.history-table {
+
+  width: 100%;
+
+  min-width: 1050px;
+
+  border-collapse: collapse;
+
+}
+
+.history-table th,
+
+.history-table td {
+
+  padding: 9px 10px;
+
+  border-right: 1px solid #e1e4e9;
+
+  border-bottom: 1px solid #e1e4e9;
+
+  color: #374151;
+
+  font-size: 10px;
+
+  text-align: left;
+
+  vertical-align: middle;
+
+}
+
+.history-table tr > \*:last-child {
+
+  border-right: 0;
+
+}
+
+.history-table tbody tr:last-child td {
+
+  border-bottom: 0;
+
+}
+
+.history-table thead th {
+
+  color: #273148;
+
+  background: #e9ebef;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.02em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+}
+
+.history-table tbody tr:hover td {
+
+  background: #faf9fb;
+
+}
+
+.history-status,
+
+.history-readonly-badge {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 24px;
+
+  padding: 0 8px;
+
+  border-radius: 999px;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 0.025em;
+
+  white-space: nowrap;
+
+}
+
+.history-status-final {
+
+  border: 1px solid #bbf7d0;
+
+  color: #166534;
+
+  background: #f0fdf4;
+
+}
+
+.history-status-archived {
+
+  border: 1px solid #d1d5db;
+
+  color: #4b5563;
+
+  background: #f9fafb;
+
+}
+
+.history-readonly-badge {
+
+  border: 1px solid #d8c4dc;
+
+  color: #72217d;
+
+  background: #faf7fb;
+
+}
+
+.history-open-cell {
+
+  width: 92px;
+
+  text-align: center !important;
+
+}
+
+.history-open-button {
+
+  min-height: 30px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 0 11px;
+
+  border: 1px solid #72217d;
+
+  border-radius: 5px;
+
+  color: #72217d;
+
+  background: #ffffff;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+}
+
+.history-open-button:hover {
+
+  color: #ffffff;
+
+  background: #72217d;
+
+}
+
+/* Disabled saved-bill exports must look unavailable even on hover. */
+.history-open-button:disabled,
+.history-open-button:disabled:hover {
+  color: #858b95;
+  background: #eff0f2;
+  border-color: #c9cdd3;
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+
+.history-worksheet-fieldset {
+
+  min-width: 0;
+
+  margin: 0;
+
+  padding: 0;
+
+  border: 0;
+
+}
+
+.history-worksheet-fieldset:disabled {
+
+  opacity: 1;
+
+}
+
+.history-worksheet-fieldset:disabled input,
+
+.history-worksheet-fieldset:disabled textarea,
+
+.history-worksheet-fieldset:disabled button,
+
+.billing-selector-bar input:disabled,
+
+.billing-selector-bar select:disabled {
+
+  cursor: default;
+
+}
+
+.history-worksheet-fieldset:disabled input,
+
+.history-worksheet-fieldset:disabled textarea,
+
+.billing-selector-bar input:disabled,
+
+.billing-selector-bar select:disabled {
+
+  color: #374151;
+
+  -webkit-text-fill-color: #374151;
+
+  opacity: 1;
+
+}
+
+.history-worksheet-fieldset:disabled .worksheet-add-row,
+
+.history-worksheet-fieldset:disabled .worksheet-delete-row {
+
+  display: none;
+
+}
+
+/* ============================================================
+
+   NAME OF BASE - FY ONLY EDITABLE
+
+============================================================ */
+
+.base-name-value {
+
+  min-height: 37px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 3px;
+
+  padding: 0 8px;
+
+  color: #111827;
+
+  background: #f7f8fa;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+}
+
+.base-name-prefix,
+
+.base-name-fixed-text {
+
+  white-space: nowrap;
+
+}
+
+.base-name-fy-input {
+
+  width: 28px !important;
+
+  height: 25px !important;
+
+  padding: 0 3px !important;
+
+  border: 1px solid #c9cdd5 !important;
+
+  border-radius: 3px;
+
+  outline: 0;
+
+  color: #111827;
+
+  background: #ffffff !important;
+
+  font-size: 11px !important;
+
+  font-weight: 700;
+
+  text-align: center;
+
+}
+
+.base-name-fy-input:focus {
+
+  border-color: #7b2182 !important;
+
+  box-shadow: 0 0 0 1px rgba(123, 33, 130, 0.15) !important;
+
+}
+
+/* ============================================================
+
+   LIVE CALCULATED RATE VALUES
+
+============================================================ */
+
+.live-rate-value {
+
+  width: 100%;
+
+  height: 29px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  padding: 0 6px;
+
+  border: 1px solid #d7dae0;
+
+  border-radius: 3px;
+
+  color: #111827;
+
+  background: #eef3f8;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  text-align: right;
+
+}
+
+/* ============================================================
+
+   EDITABLE RATE CELLS
+
+============================================================ */
+
+.calculated-cell input:not([readonly]) {
+
+  color: #111827;
+
+  background: #ffffff;
+
+  font-weight: 600;
+
+  text-align: left;
+
+}
+
+.calculated-cell input:not([readonly]):focus {
+
+  border-color: #7b2182;
+
+  box-shadow: 0 0 0 1px rgba(123, 33, 130, 0.15);
+
+}
+
+/* ============================================================
+
+   RATE CALCULATION STATIC INPUTS
+
+============================================================ */
+
+.rate-static-input-column {
+
+  width: 105px;
+
+  min-width: 105px;
+
+  text-align: center !important;
+
+}
+
+.rate-static-input-cell {
+
+  width: 105px;
+
+  min-width: 105px;
+
+  padding: 4px !important;
+
+  background: #fafafa;
+
+}
+
+.rate-static-input-wrap {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  width: 100%;
+
+}
+
+.rate-static-input-wrap input {
+
+  width: 100%;
+
+  min-width: 0;
+
+  height: 29px;
+
+  padding: 0 6px;
+
+  border: 1px solid #c9cdd5;
+
+  border-radius: 3px;
+
+  outline: 0;
+
+  color: #111827;
+
+  background: #ffffff;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  text-align: right;
+
+}
+
+.rate-static-input-wrap input:focus {
+
+  border-color: #7b2182;
+
+  box-shadow: 0 0 0 1px rgba(123, 33, 130, 0.15);
+
+}
+
+.rate-static-input-wrap span {
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  color: #4b5563;
+
+}
+
+.rate-static-currency {
+
+  gap: 2px;
+
+}
+
+.rate-static-empty {
+
+  display: block;
+
+  text-align: center;
+
+  color: #9ca3af;
+
+}
+
+.rate-not-used {
+
+  display: block;
+
+  text-align: center;
+
+  color: #9ca3af;
+
+  font-weight: 700;
+
+}
+
+.sales-rate-free-text input {
+
+  color: #111827;
+
+  background: #ffffff;
+
+  font-weight: 600;
+
+  text-align: left;
+
+}
+
+.sales-rate-free-text input:focus {
+
+  border-color: #7b2182;
+
+  box-shadow: 0 0 0 1px rgba(123, 33, 130, 0.15);
+
+}
+
+/* ============================================================
+
+   RATE MATH NOTES
+
+============================================================ */
+
+.rate-description-with-note {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 4px;
+
+}
+
+.rate-math-note {
+
+  display: block;
+
+  color: #6b7280;
+
+  font-size: 8px;
+
+  font-weight: 500;
+
+  line-height: 1.3;
+
+  text-transform: none;
+
+  letter-spacing: 0;
+
+}
+
+/* ============================================================
+
+   OTHER UTILITY COST CALCULATION WORKSHEET
+
+   Separate from the existing 3556 calculations.
+
+============================================================ */
+
+.oucw-section {
+
+  margin-top: 26px;
+
+  border: 1px solid #d7d9df;
+
+  border-radius: 7px;
+
+  overflow: hidden;
+
+  background: #fff;
+
+}
+
+.oucw-title {
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 22px;
+
+  padding: 15px 16px;
+
+  color: #fff;
+
+  background: linear-gradient(100deg, #7b2182 0%, #72217d 55%, #67216e 100%);
+
+}
+
+.oucw-title h2 {
+
+  margin: 0;
+
+  font-size: 16px;
+
+  font-weight: 800;
+
+}
+
+.oucw-title p {
+
+  margin: 5px 0 0;
+
+  max-width: 720px;
+
+  font-size: 9px;
+
+  line-height: 1.4;
+
+  opacity: .92;
+
+}
+
+.oucw-period-field {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  width: 285px;
+
+  flex: 0 0 285px;
+
+}
+
+.oucw-period-field span,
+
+.oucw-equation-grid label span,
+
+.oucw-part-three label span {
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+}
+
+.oucw-period-field input {
+
+  height: 31px;
+
+  padding: 0 8px;
+
+  border: 1px solid rgba(255,255,255,.65);
+
+  border-radius: 3px;
+
+  background: #fff;
+
+  color: #111827;
+
+  font-size: 9px;
+
+}
+
+.oucw-part-title {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+
+  padding: 9px 12px;
+
+  border-top: 1px solid #d7d9df;
+
+  border-bottom: 1px solid #d7d9df;
+
+  color: #4f1756;
+
+  background: #f4edf5;
+
+}
+
+.oucw-part-title strong {
+
+  font-size: 10px;
+
+  font-weight: 900;
+
+}
+
+.oucw-part-title span {
+
+  color: #6b7280;
+
+  font-size: 8px;
+
+  font-weight: 500;
+
+}
+
+.oucw-table input,
+
+.oucw-table textarea,
+
+.oucw-equation-grid input,
+
+.oucw-part-three input {
+
+  width: 100%;
+
+  min-width: 0;
+
+  padding: 6px 7px;
+
+  border: 1px solid #cfd2d9;
+
+  border-radius: 3px;
+
+  outline: none;
+
+  background: #fff;
+
+  color: #111827;
+
+  font: inherit;
+
+}
+
+.oucw-table input:focus,
+
+.oucw-table textarea:focus,
+
+.oucw-equation-grid input:focus,
+
+.oucw-part-three input:focus {
+
+  border-color: #7b2182;
+
+  box-shadow: 0 0 0 1px rgba(123,33,130,.14);
+
+}
+
+.oucw-table textarea {
+
+  resize: vertical;
+
+}
+
+.oucw-part-one th:nth-child(1) { width: 14%; }
+
+.oucw-part-one th:nth-child(2) { width: 43%; }
+
+.oucw-part-one th:nth-child(3) { width: 13%; }
+
+.oucw-part-one th:nth-child(4) { width: 10%; }
+
+.oucw-part-one th:nth-child(5) { width: 20%; }
+
+.oucw-footnote {
+
+  margin: 0;
+
+  padding: 8px 12px 11px;
+
+  color: #6b7280;
+
+  font-size: 8px;
+
+  font-style: italic;
+
+}
+
+.oucw-part-two th:nth-child(1) { width: 16%; }
+
+.oucw-part-two th:nth-child(2) { width: 21%; }
+
+.oucw-part-two th:nth-child(3) { width: 10%; }
+
+.oucw-part-two th:nth-child(4) { width: 5%; }
+
+.oucw-part-two th:nth-child(5) { width: 25%; }
+
+.oucw-part-two th:nth-child(6) { width: 5%; }
+
+.oucw-part-two th:nth-child(7) { width: 18%; }
+
+.oucw-symbol {
+
+  text-align: center !important;
+
+  color: #6b7280;
+
+  font-weight: 900 !important;
+
+}
+
+.oucw-total-row th,
+
+.oucw-total-row td {
+
+  background: #f4edf5 !important;
+
+  font-weight: 900 !important;
+
+}
+
+.oucw-total-row th {
+
+  text-align: right !important;
+
+}
+
+.oucw-annualize {
+
+  padding: 13px 12px 15px;
+
+  border-top: 1px solid #e1e3e8;
+
+  background: #fbfbfc;
+
+}
+
+.oucw-annualize-copy {
+
+  margin-bottom: 10px;
+
+  color: #252a34;
+
+  font-size: 9px;
+
+}
+
+.oucw-equation-grid {
+
+  display: grid;
+
+  grid-template-columns: 1fr auto 150px auto 1fr;
+
+  align-items: end;
+
+  gap: 10px;
+
+}
+
+.oucw-equation-grid label,
+
+.oucw-part-three label {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+}
+
+.oucw-part-three {
+
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr 120px auto 1fr;
+
+  align-items: end;
+
+  gap: 10px;
+
+  padding: 14px 12px 17px;
+
+}
+
+.oucw-equation-word {
+
+  padding-bottom: 8px;
+
+  color: #6b7280;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+}
+
+@media (max-width: 1100px) {
+
+  .oucw-title {
+
+    align-items: stretch;
+
+    flex-direction: column;
+
+  }
+
+  .oucw-period-field {
+
+    width: 100%;
+
+    flex-basis: auto;
+
+  }
+
+  .oucw-equation-grid,
+
+  .oucw-part-three {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .oucw-equation-grid > .oucw-symbol,
+
+  .oucw-part-three > .oucw-symbol,
+
+  .oucw-equation-word {
+
+    display: none;
+
+  }
+
+}
+
+.oucw-fixed-uom {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 30px;
+
+  color: #374151;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+}
+
+.oucw-fixed-uom-box {
+
+  width: 100%;
+
+  padding: 6px 7px;
+
+  border: 1px solid #e1e3e8;
+
+  border-radius: 3px;
+
+  background: #f7f7f9;
+
+}
+
+.oucw-unit-field {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+}
+
+.oucw-unit-field > span {
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+}
+
+.oucw-part-two input[readonly] {
+
+  background: #f7f7f9;
+
+  color: #374151;
+
+  font-weight: 700;
+
+  cursor: default;
+
+}
+
+.oucw-calculated-cell output,
+
+.oucw-equation-output {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  width: 100%;
+
+  min-height: 30px;
+
+  padding: 6px 7px;
+
+  border: 1px solid #e1e3e8;
+
+  border-radius: 3px;
+
+  background: #f7f7f9;
+
+  color: #111827;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+}
+
+/* ============================================================
+
+   B-6 ADMINISTRATIVE OVERHEAD (3%)
+
+   Calculated rate cell: B-6 Subtotal × 0.03
+
+============================================================ */
+
+.calculated-cell .live-rate-value {
+
+  box-sizing: border-box;
+
+  min-height: 29px;
+
+  border: 1px solid #d7dae0;
+
+  border-radius: 3px;
+
+  color: #111827;
+
+  background: #eef3f8;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  text-align: right;
+
+}
+
+.calculated-cell .rate-not-used {
+
+  min-height: 29px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #9ca3af;
+
+  background: #fafafa;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+}
+
+/* ============================================================
+   CUSTOMER BILLING SUB TABS
+============================================================ */
+
+.customer-billing-content {
+  padding-top: 12px;
+}
+
+.customer-billing-tabs {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 42px;
+  padding: 4px;
+  border: 1px solid #dedfe5;
+  border-radius: 7px;
+  background: #f5f6f8;
+}
+
+.customer-billing-tab {
+  min-height: 32px;
+  padding: 0 16px;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #4b5563;
+  background: transparent;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.customer-billing-tab:hover {
+  color: #72217d;
+  background: #ffffff;
+}
+
+.customer-billing-tab-active {
+  border-color: #d8c5dc;
+  color: #72217d;
+  background: #ffffff;
+  box-shadow: 0 1px 2px rgba(17, 24, 39, 0.06);
+}
+
+.customer-billing-empty {
+  min-height: 420px;
+}
+
+@media (max-width: 720px) {
+  .customer-billing-tabs {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .customer-billing-tab {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+/* ============================================================
+   RCBL SHORT - BILL PREVIEW
+   ============================================================ */
+
+.rcbl-preview {
+  display: grid;
+  gap: 18px;
+  padding-top: 18px;
+}
+
+.rcbl-preview-hero {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 22px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.rcbl-preview-hero h2 {
+  margin: 3px 0 6px;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.rcbl-preview-hero p {
+  max-width: 820px;
+  margin: 0;
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.rcbl-preview-badge {
+  min-width: 132px;
+  padding: 10px 14px;
+  border: 1px solid #7b2182;
+  border-radius: 10px;
+  text-align: center;
+  background: #faf5fb;
+}
+
+.rcbl-preview-badge strong,
+.rcbl-preview-badge span {
+  display: block;
+}
+
+.rcbl-preview-badge strong {
+  color: #7b2182;
+  font-size: 12px;
+}
+
+.rcbl-preview-badge span {
+  margin-top: 2px;
+  color: #6b7280;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.rcbl-preview-controls,
+.rcbl-preview-toolbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.rcbl-preview-controls label,
+.rcbl-preview-toolbar label {
+  display: grid;
+  gap: 6px;
+}
+
+.rcbl-preview-controls label span,
+.rcbl-preview-toolbar label span {
+  color: #4b5563;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.rcbl-preview-controls input,
+.rcbl-preview-toolbar select {
+  min-width: 210px;
+  height: 38px;
+  padding: 0 11px;
+  border: 1px solid #d1d5db;
+  border-radius: 7px;
+  background: #fff;
+  color: #111827;
+  font: inherit;
+}
+
+.rcbl-preview-period,
+.rcbl-preview-summary {
+  display: grid;
+  gap: 10px;
+}
+
+.rcbl-preview-period {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.rcbl-preview-summary {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.rcbl-preview-period > div,
+.rcbl-preview-summary article {
+  padding: 14px 16px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.rcbl-preview-period span,
+.rcbl-preview-summary span {
+  display: block;
+  color: #6b7280;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.rcbl-preview-period strong,
+.rcbl-preview-summary strong {
+  display: block;
+  margin-top: 5px;
+  color: #111827;
+  font-size: 17px;
+}
+
+.rcbl-preview-toolbar > div {
+  display: grid;
+  gap: 3px;
+}
+
+.rcbl-preview-toolbar > div > span {
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.rcbl-preview-table-shell,
+.rcbl-line-table-shell {
+  overflow-x: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.rcbl-preview-table,
+.rcbl-line-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rcbl-preview-table {
+  min-width: 1120px;
+}
+
+.rcbl-line-table {
+  min-width: 1200px;
+}
+
+.rcbl-preview-table th,
+.rcbl-preview-table td,
+.rcbl-line-table th,
+.rcbl-line-table td {
+  padding: 10px 11px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+  vertical-align: top;
+  font-size: 11px;
+}
+
+.rcbl-preview-table thead th,
+.rcbl-line-table thead th {
+  background: #f8f8fb;
+  color: #4b5563;
+  font-size: 10px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.035em;
+}
+
+.rcbl-preview-table tbody tr:last-child > td,
+.rcbl-line-table tbody tr:last-child > td {
+  border-bottom: 0;
+}
+
+.rcbl-money {
+  white-space: nowrap;
+  text-align: right !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.rcbl-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 23px;
+  padding: 0 8px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.rcbl-status-ready {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.rcbl-status-review {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.rcbl-detail-row > td {
+  padding: 0 !important;
+  background: #f8f8fb;
+}
+
+.rcbl-bill {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+}
+
+.rcbl-bill-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 18px;
+  border-radius: 9px;
+  background: #fff;
+}
+
+.rcbl-bill-heading span {
+  color: #7b2182;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+
+.rcbl-bill-heading h3 {
+  margin: 3px 0 4px;
+  font-size: 19px;
+}
+
+.rcbl-bill-heading p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 11px;
+}
+
+.rcbl-bill-total {
+  min-width: 210px;
+  text-align: right;
+}
+
+.rcbl-bill-total span {
+  color: #6b7280;
+}
+
+.rcbl-bill-total strong {
+  display: block;
+  margin-top: 4px;
+  color: #111827;
+  font-size: 19px;
+}
+
+.rcbl-preview-alert,
+.rcbl-issues {
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.rcbl-preview-alert-error,
+.rcbl-issues {
+  border: 1px solid #fed7aa;
+  background: #fff7ed;
+  color: #9a3412;
+}
+
+.rcbl-preview-alert-success {
+  border: 1px solid #a7f3d0;
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.rcbl-issues strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.rcbl-issues p {
+  margin: 3px 0 0;
+}
+
+.rcbl-preview-empty {
+  min-height: 150px;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+  color: #6b7280;
+  text-align: center;
+}
+
+.rcbl-empty-cell {
+  padding: 28px !important;
+  color: #6b7280;
+  text-align: center !important;
+}
+
+@media (max-width: 1450px) {
+  .rcbl-preview-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .rcbl-preview-hero,
+  .rcbl-preview-controls,
+  .rcbl-preview-toolbar,
+  .rcbl-bill-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .rcbl-preview-period,
+  .rcbl-preview-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rcbl-bill-total {
+    min-width: 0;
+    text-align: left;
+  }
+}
+
+/* 3556 reporting / finance review screens; independent of bill calculations. */
+.finance-workspace { padding: 24px; display: grid; gap: 16px; }
+.finance-workspace h2 { margin: 0; color: var(--billing-accent, #284c74); }
+.finance-controls { display: flex; flex-wrap: wrap; align-items: end; gap: 12px; }
+.finance-controls label, .finance-classification label { display: grid; gap: 5px; font-weight: 600; font-size: 13px; }
+.finance-controls select, .finance-classification select, .finance-classification input { min-height: 36px; padding: 7px; border-radius: 6px; border: 1px solid #a8b4c0; background: white; color: #162331; }
+.finance-controls button, .finance-classification button { min-height: 36px; padding: 7px 15px; background: #285884; color: white; border: 0; border-radius: 6px; cursor: pointer; }
+.finance-controls button:disabled, .finance-classification button:disabled { opacity: .45; cursor: not-allowed; }
+.finance-summary { display: grid; grid-template-columns: repeat(auto-fit,minmax(165px,1fr)); gap: 12px; }
+.finance-summary > div { background: #f1f6fa; border: 1px solid #cbd8e2; border-radius: 6px; padding: 12px; display: grid; gap: 6px; color: #20324a; }
+.finance-summary span { font-size: 18px; font-weight: 700; }
+.finance-scroll { max-height: 650px; overflow: auto; border: 1px solid #d1dae3; border-radius: 6px; }
+.finance-table { border-collapse: collapse; width: 100%; white-space: nowrap; font-size: 12px; }
+.finance-table th,.finance-table td { padding: 8px 11px; border-bottom: 1px solid #dee5ec; text-align: left; }
+.finance-table th { position: sticky; top: 0; background: #284664; color: white; z-index: 1; }
+.finance-table .finance-money { text-align: right; font-variant-numeric: tabular-nums; }
+.finance-table .finance-total-row { background: #edf3fa; font-weight: 700; }
+.finance-issues,.finance-notice { border: 1px solid #a98a57; padding: 12px; border-radius: 6px; color: #543e16; background: #fbf7ed; }
+.finance-error { color: #a92323; font-weight: 600; }
+.finance-classification { margin: 18px 0; border: 1px solid #bbcad9; padding: 12px; border-radius: 6px; }
+.finance-classification summary { cursor: pointer; font-weight: 700; }
+.finance-classification input { min-width: 300px; }
+
+.finance-issues summary { cursor: pointer; font-weight: 700; }
+.finance-issues ul { margin-bottom: 0; overflow-wrap: anywhere; }

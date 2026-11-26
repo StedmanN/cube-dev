@@ -1,0 +1,1094 @@
+/* Dashboard content styles. The shared .ce-* shell is defined once in
+   app/app-shell.css and loaded by the root layout. */
+
+/* ============================================================
+   DASHBOARD BASE
+   ============================================================ */
+
+.ce-dashboard {
+  width: 100%;
+  max-width: 1700px;
+  margin: 0 auto;
+}
+
+.ce-dashboard-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+
+  margin-bottom: 24px;
+}
+
+.ce-dashboard-eyebrow,
+.ce-dashboard-section-heading p,
+.ce-dashboard-panel-heading p {
+  margin: 0 0 5px;
+
+  color: #7b2182;
+
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.ce-dashboard-header h1 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: clamp(26px, 2.3vw, 36px);
+  font-weight: 760;
+  letter-spacing: -0.035em;
+}
+
+.ce-dashboard-subtitle {
+  margin: 8px 0 0;
+
+  color: #6b7280;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.ce-dashboard-period-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+
+  flex-shrink: 0;
+}
+
+.ce-dashboard-period-controls label,
+.ce-dashboard-period-id {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ce-dashboard-period-controls label > span,
+.ce-dashboard-period-id > span {
+  color: #6b7280;
+
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.ce-dashboard-period-controls select {
+  min-width: 132px;
+  height: 40px;
+
+  padding: 0 34px 0 12px;
+
+  color: #1f2937;
+  background: #ffffff;
+
+  border: 1px solid #d8dbe3;
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 650;
+
+  outline: none;
+  cursor: pointer;
+}
+
+.ce-dashboard-period-controls select:focus {
+  border-color: #8a3292;
+  box-shadow: 0 0 0 3px rgba(123, 33, 130, 0.09);
+}
+
+.ce-dashboard-period-id {
+  min-width: 112px;
+}
+
+.ce-dashboard-period-id strong {
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 13px;
+
+  color: #6f1d78;
+  background: #f7eef8;
+
+  border: 1px solid #ead7ed;
+  border-radius: 8px;
+
+  font-size: 14px;
+}
+
+/* ============================================================
+   SECTION HEADINGS
+   ============================================================ */
+
+.ce-dashboard-section {
+  margin-bottom: 24px;
+}
+
+.ce-dashboard-section-heading,
+.ce-dashboard-panel-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.ce-dashboard-section-heading {
+  margin-bottom: 12px;
+}
+
+.ce-dashboard-section-heading h2,
+.ce-dashboard-panel-heading h2 {
+  margin: 0;
+
+  color: #1f2937;
+
+  font-size: 18px;
+  font-weight: 740;
+  letter-spacing: -0.02em;
+}
+
+.ce-dashboard-panel-heading > svg {
+  flex-shrink: 0;
+  color: #7b2182;
+}
+
+.ce-dashboard-panel-heading > div > span {
+  display: block;
+  margin-top: 5px;
+
+  color: #6b7280;
+
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+/* ============================================================
+   PROCESSING PIPELINE
+   ============================================================ */
+
+.ce-dashboard-process-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.ce-dashboard-process-step {
+  min-width: 0;
+  min-height: 76px;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 13px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.025);
+}
+
+.ce-dashboard-process-icon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+}
+
+.ce-dashboard-process-step > div:last-child {
+  min-width: 0;
+}
+
+.ce-dashboard-process-step strong,
+.ce-dashboard-process-step span {
+  display: block;
+}
+
+.ce-dashboard-process-step strong {
+  color: #1f2937;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.ce-dashboard-process-step span {
+  overflow: hidden;
+  margin-top: 3px;
+
+  color: #6b7280;
+
+  font-size: 11px;
+  line-height: 1.3;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ce-dashboard-process-complete {
+  border-color: #d7eadf;
+}
+
+.ce-dashboard-process-complete .ce-dashboard-process-icon {
+  color: #15803d;
+  background: #edf8f1;
+}
+
+.ce-dashboard-process-warning {
+  border-color: #f2d8a4;
+  background: #fffdf8;
+}
+
+.ce-dashboard-process-warning .ce-dashboard-process-icon {
+  color: #b45309;
+  background: #fff4db;
+}
+
+.ce-dashboard-process-pending .ce-dashboard-process-icon {
+  color: #9ca3af;
+  background: #f3f4f6;
+}
+
+/* ============================================================
+   KPI CARDS
+   ============================================================ */
+
+.ce-dashboard-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+
+  margin-bottom: 24px;
+}
+
+.ce-dashboard-kpi-card {
+  min-width: 0;
+  min-height: 132px;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 16px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 11px;
+
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.035);
+}
+
+.ce-dashboard-kpi-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+
+  margin-bottom: 14px;
+}
+
+.ce-dashboard-kpi-top > span {
+  color: #6b7280;
+
+  font-size: 11px;
+  font-weight: 760;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.ce-dashboard-kpi-icon {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: #6b7280;
+  background: #f3f4f6;
+
+  border-radius: 8px;
+}
+
+.ce-dashboard-kpi-card > strong {
+  overflow: hidden;
+
+  color: #111827;
+
+  font-size: clamp(21px, 1.7vw, 29px);
+  font-weight: 790;
+  letter-spacing: -0.04em;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ce-dashboard-kpi-card > small {
+  margin-top: auto;
+  padding-top: 8px;
+
+  color: #8a909b;
+
+  font-size: 10px;
+  line-height: 1.35;
+}
+
+.ce-dashboard-kpi-purple {
+  border-top: 3px solid #7b2182;
+}
+
+.ce-dashboard-kpi-purple .ce-dashboard-kpi-icon {
+  color: #7b2182;
+  background: #f7eef8;
+}
+
+.ce-dashboard-kpi-blue {
+  border-top: 3px solid #2563eb;
+}
+
+.ce-dashboard-kpi-blue .ce-dashboard-kpi-icon {
+  color: #2563eb;
+  background: #eff6ff;
+}
+
+.ce-dashboard-kpi-green {
+  border-top: 3px solid #16a34a;
+}
+
+.ce-dashboard-kpi-green .ce-dashboard-kpi-icon {
+  color: #15803d;
+  background: #edf8f1;
+}
+
+.ce-dashboard-kpi-amber {
+  border-top: 3px solid #d97706;
+}
+
+.ce-dashboard-kpi-amber .ce-dashboard-kpi-icon {
+  color: #b45309;
+  background: #fff7e6;
+}
+
+/* ============================================================
+   GENERAL PANELS
+   ============================================================ */
+
+.ce-dashboard-panel {
+  min-width: 0;
+
+  margin-bottom: 24px;
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+
+  box-shadow: 0 1px 4px rgba(15, 23, 42, 0.035);
+}
+
+.ce-dashboard-panel-heading {
+  margin-bottom: 18px;
+}
+
+/* ============================================================
+   CHART LEGEND
+   ============================================================ */
+
+.ce-dashboard-chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  flex-wrap: wrap;
+}
+
+.ce-dashboard-chart-legend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #5f6672;
+
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.ce-dashboard-chart-legend i {
+  width: 9px;
+  height: 9px;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.ce-dashboard-legend-metered {
+  background: #7b2182;
+}
+
+.ce-dashboard-legend-invoiced {
+  background: #2563eb;
+}
+
+.ce-dashboard-legend-estimated {
+  background: #16a34a;
+}
+
+/* ============================================================
+   RECONCILIATION CHART
+   ============================================================ */
+
+.ce-dashboard-reconciliation-chart {
+  min-height: 315px;
+
+  display: grid;
+  grid-template-columns: repeat(12, minmax(42px, 1fr));
+  gap: 8px;
+
+  padding: 16px 4px 2px;
+}
+
+.ce-dashboard-chart-month {
+  min-width: 0;
+
+  display: grid;
+  grid-template-rows: 48px 220px 24px;
+  gap: 5px;
+
+  padding: 4px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+  transition:
+    background 120ms ease,
+    transform 120ms ease;
+}
+
+.ce-dashboard-chart-month:hover {
+  background: #faf7fb;
+  transform: translateY(-1px);
+}
+
+.ce-dashboard-chart-month-active {
+  background: #f8f0f9;
+}
+
+.ce-dashboard-chart-values {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+
+  color: #5f6672;
+
+  font-size: 9px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.ce-dashboard-chart-track {
+  position: relative;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 3px;
+
+  min-width: 0;
+  height: 220px;
+
+  padding: 0 5px;
+
+  border-bottom: 1px solid #d9dce3;
+
+  background:
+    repeating-linear-gradient(
+      to top,
+      transparent 0,
+      transparent 54px,
+      #f0f1f4 55px
+    );
+}
+
+.ce-dashboard-chart-bar {
+  width: 26%;
+  max-width: 22px;
+  min-width: 5px;
+
+  border-radius: 4px 4px 0 0;
+
+  transition:
+    height 180ms ease,
+    opacity 120ms ease;
+}
+
+.ce-dashboard-chart-bar:hover {
+  opacity: 0.78;
+}
+
+.ce-dashboard-chart-metered {
+  background: #7b2182;
+}
+
+.ce-dashboard-chart-invoiced {
+  background: #2563eb;
+}
+
+.ce-dashboard-chart-estimated {
+  background: #16a34a;
+}
+
+.ce-dashboard-chart-month > strong {
+  align-self: center;
+
+  color: #6b7280;
+
+  font-size: 10px;
+  font-weight: 750;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.ce-dashboard-chart-month-active > strong {
+  color: #7b2182;
+}
+
+/* ============================================================
+   UTILITY CARDS
+   ============================================================ */
+
+.ce-dashboard-utility-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ce-dashboard-utility-card {
+  min-width: 0;
+
+  padding: 17px;
+
+  background: #ffffff;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 11px;
+
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.03);
+}
+
+.ce-dashboard-utility-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding-bottom: 14px;
+
+  border-bottom: 1px solid #eef0f3;
+}
+
+.ce-dashboard-utility-icon {
+  width: 39px;
+  height: 39px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  color: #7b2182;
+  background: #f7eef8;
+
+  border-radius: 9px;
+}
+
+.ce-dashboard-utility-heading span {
+  display: block;
+
+  color: #8a909b;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.ce-dashboard-utility-heading h3 {
+  margin: 2px 0 0;
+
+  color: #1f2937;
+
+  font-size: 15px;
+  font-weight: 760;
+}
+
+.ce-dashboard-utility-values {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+
+  padding: 15px 0;
+}
+
+.ce-dashboard-utility-values div {
+  min-width: 0;
+}
+
+.ce-dashboard-utility-values span,
+.ce-dashboard-utility-values strong {
+  display: block;
+}
+
+.ce-dashboard-utility-values span {
+  margin-bottom: 4px;
+
+  color: #8a909b;
+
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.ce-dashboard-utility-values strong {
+  overflow: hidden;
+
+  color: #111827;
+
+  font-size: 15px;
+  font-weight: 760;
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ce-dashboard-utility-variances {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding-top: 13px;
+
+  border-top: 1px solid #eef0f3;
+}
+
+.ce-dashboard-utility-variances > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.ce-dashboard-utility-variances > div > span:first-child {
+  color: #6b7280;
+  font-size: 10px;
+}
+
+.ce-dashboard-variance {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+
+  color: #4b5563;
+
+  font-size: 11px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.ce-dashboard-variance-up {
+  color: #b45309;
+}
+
+.ce-dashboard-variance-down {
+  color: #2563eb;
+}
+
+/* ============================================================
+   TWO COLUMN SECTION
+   ============================================================ */
+
+.ce-dashboard-two-column {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 16px;
+}
+
+.ce-dashboard-two-column > .ce-dashboard-panel {
+  height: calc(100% - 24px);
+}
+
+/* ============================================================
+   ATTENTION LIST
+   ============================================================ */
+
+.ce-dashboard-attention-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.ce-dashboard-attention-list a {
+  min-height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+
+  padding: 10px 4px;
+
+  border-bottom: 1px solid #eef0f3;
+
+  transition:
+    color 120ms ease,
+    background 120ms ease,
+    padding 120ms ease;
+}
+
+.ce-dashboard-attention-list a:last-child {
+  border-bottom: 0;
+}
+
+.ce-dashboard-attention-list a:hover {
+  padding-left: 8px;
+  padding-right: 8px;
+
+  color: #7b2182;
+  background: #fbf8fc;
+}
+
+.ce-dashboard-attention-list a > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  min-width: 0;
+}
+
+.ce-dashboard-attention-list svg {
+  flex-shrink: 0;
+  color: #7b2182;
+}
+
+.ce-dashboard-attention-list span {
+  color: #4b5563;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ce-dashboard-attention-list strong {
+  min-width: 34px;
+
+  color: #111827;
+
+  font-size: 17px;
+  font-weight: 790;
+  text-align: right;
+}
+
+/* ============================================================
+   REAL PROPERTY HEALTH
+   ============================================================ */
+
+.ce-dashboard-rp-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 9px;
+
+  margin-bottom: 19px;
+}
+
+.ce-dashboard-rp-summary > div {
+  min-width: 0;
+
+  padding: 12px;
+
+  background: #f8f9fb;
+
+  border: 1px solid #eceef2;
+  border-radius: 8px;
+}
+
+.ce-dashboard-rp-summary span,
+.ce-dashboard-rp-summary strong {
+  display: block;
+}
+
+.ce-dashboard-rp-summary span {
+  min-height: 26px;
+
+  color: #777e89;
+
+  font-size: 9px;
+  font-weight: 720;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.ce-dashboard-rp-summary strong {
+  margin-top: 5px;
+
+  color: #1f2937;
+
+  font-size: 19px;
+  font-weight: 790;
+}
+
+.ce-dashboard-rp-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.ce-dashboard-rp-bars > div > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 5px;
+}
+
+.ce-dashboard-rp-bars span {
+  color: #5f6672;
+
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.ce-dashboard-rp-bars strong {
+  color: #374151;
+
+  font-size: 11px;
+  font-weight: 780;
+}
+
+.ce-dashboard-progress {
+  position: relative;
+
+  width: 100%;
+  height: 7px;
+
+  overflow: hidden;
+
+  background: #eceef2;
+
+  border-radius: 999px;
+}
+
+.ce-dashboard-progress i {
+  position: absolute;
+  inset: 0 auto 0 0;
+
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      #7b2182,
+      #9b4ba2
+    );
+
+  border-radius: inherit;
+}
+
+/* ============================================================
+   RECONCILIATION TABLE
+   ============================================================ */
+
+.ce-dashboard-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 9px;
+}
+
+.ce-dashboard-table {
+  width: 100%;
+  min-width: 1020px;
+
+  border-collapse: collapse;
+
+  background: #ffffff;
+}
+
+.ce-dashboard-table th {
+  padding: 11px 12px;
+
+  color: #6b7280;
+  background: #f8f9fb;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-align: right;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.ce-dashboard-table th:first-child {
+  text-align: left;
+}
+
+.ce-dashboard-table td {
+  padding: 13px 12px;
+
+  color: #374151;
+
+  border-bottom: 1px solid #eef0f3;
+
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.ce-dashboard-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.ce-dashboard-table tbody tr:hover {
+  background: #fbfbfc;
+}
+
+.ce-dashboard-table td:first-child {
+  min-width: 155px;
+  text-align: left;
+}
+
+.ce-dashboard-table td:first-child strong,
+.ce-dashboard-table td:first-child span {
+  display: block;
+}
+
+.ce-dashboard-table td:first-child strong {
+  color: #1f2937;
+
+  font-size: 12px;
+  font-weight: 730;
+}
+
+.ce-dashboard-table td:first-child span {
+  margin-top: 2px;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+  font-weight: 760;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1450px) {
+  .ce-dashboard-kpi-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ce-dashboard-utility-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1180px) {
+  .ce-dashboard-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .ce-dashboard-period-controls {
+    width: 100%;
+  }
+
+  .ce-dashboard-period-controls label {
+    flex: 1;
+  }
+
+  .ce-dashboard-period-controls select {
+    width: 100%;
+  }
+
+  .ce-dashboard-process-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .ce-dashboard-two-column {
+    grid-template-columns: 1fr;
+  }
+
+  .ce-dashboard-two-column > .ce-dashboard-panel {
+    height: auto;
+  }
+
+  .ce-dashboard-reconciliation-chart {
+    overflow-x: auto;
+    grid-template-columns: repeat(12, minmax(58px, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .ce-dashboard-process-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ce-dashboard-kpi-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 650px) {
+  .ce-dashboard-header h1 {
+    font-size: 26px;
+  }
+
+  .ce-dashboard-period-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ce-dashboard-period-id {
+    grid-column: 1 / -1;
+  }
+
+  .ce-dashboard-process-grid,
+  .ce-dashboard-kpi-grid,
+  .ce-dashboard-utility-grid,
+  .ce-dashboard-rp-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .ce-dashboard-panel {
+    padding: 15px;
+  }
+
+  .ce-dashboard-panel-heading {
+    flex-direction: column;
+  }
+
+  .ce-dashboard-chart-legend {
+    gap: 9px;
+  }
+
+  .ce-dashboard-utility-values {
+    grid-template-columns: 1fr;
+  }
+}

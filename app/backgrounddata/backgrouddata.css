@@ -1,0 +1,1959 @@
+/* Shared application shell moved to app/app-shell.css. */
+
+.bd-main { min-width: 0; }
+.bd-title-row { min-height: 105px; display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; }
+.bd-eyebrow { margin: 0 0 6px; color: #7b2182; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.bd-title-row h1 { margin: 0; font-size: 34px; line-height: 1.1; letter-spacing: -.8px; }
+.bd-subtitle { margin: 8px 0 0; color: #4b5563; font-size: 16px; }
+.bd-record-count { height: 43px; margin-top: 10px; display: flex; align-items: center; gap: 9px; padding: 0 14px; border: 1px solid #ded9e4; border-radius: 8px; color: #67216e; background: #fff; font-size: 13px; font-weight: 600; }
+.bd-workspace { overflow: hidden; border: 1px solid #dfe1e7; border-radius: 11px; background: #fff; box-shadow: 0 2px 8px rgba(15,23,42,.05); }
+.bd-toolbar { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 10px 14px; border-bottom: 1px solid #e2e4e9; background: #fbfbfd; }
+.bd-tabs { min-width: 0; display: flex; gap: 5px; overflow-x: auto; padding: 2px; scrollbar-width: thin; }
+.bd-tab { min-height: 40px; flex: 0 0 auto; padding: 0 14px; border: 1px solid #d9dce3; border-radius: 7px; color: #273148; background: #fff; font-size: 14px; font-weight: 600; cursor: pointer; }
+.bd-tab:hover { border-color: #8a4a92; color: #71217d; }
+.bd-tab-active { border-color: #72217d; color: #fff; background: linear-gradient(110deg, #342a83 0%, #662580 100%); box-shadow: 0 4px 12px rgba(82,37,124,.18); }
+.bd-tab-active:hover { color: #fff; }
+.bd-actions { flex: 0 0 auto; display: flex; align-items: center; gap: 9px; }
+.bd-search { width: 220px; height: 40px; display: flex; align-items: center; gap: 8px; padding: 0 11px; border: 1px solid #d9dce3; border-radius: 7px; color: #6b7280; background: #fff; }
+.bd-search:focus-within { border-color: #7b2182; box-shadow: 0 0 0 3px rgba(123,33,130,.1); }
+.bd-search input { width: 100%; min-width: 0; border: 0; outline: 0; color: #111827; background: transparent; font-size: 14px; }
+.bd-add-button { height: 40px; display: flex; align-items: center; gap: 7px; padding: 0 15px; border: 0; border-radius: 7px; color: #fff; background: linear-gradient(110deg, #342a83 0%, #662580 100%); font-size: 14px; font-weight: 700; white-space: nowrap; cursor: pointer; box-shadow: 0 4px 10px rgba(52,42,131,.18); }
+.bd-add-button:hover { filter: brightness(1.08); }
+.bd-table-panel { padding: 17px 18px 8px; }
+.bd-assessment-panel { margin-top: 2px; border-top: 1px solid #e2e4e9; background: #fdfdfe; }
+.bd-table-heading { min-height: 47px; display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; }
+.bd-table-heading h2 { margin: 0; font-size: 17px; }
+.bd-table-heading p { margin: 4px 0 0; color: #6b7280; font-size: 13px; }
+.bd-table-heading > span { color: #6b7280; font-size: 12px; }
+.bd-table-scroll { overflow-x: auto; border: 1px solid #e0e2e7; border-radius: 8px; }
+.bd-table { width: 100%; min-width: 1650px; border-collapse: collapse; table-layout: fixed; background: #fff; }
+.bd-table th { height: auto; padding: 12px 11px; border-bottom: 1px solid #dfe1e7; color: #4b5563; background: #f4f5f8; text-align: left; vertical-align: top; }
+.bd-sort-button { width: 100%; display: flex; align-items: flex-start; justify-content: space-between; gap: 6px; border: 0; padding: 0; color: inherit; background: transparent; font-size: 11px; font-weight: 700; line-height: 1.35; letter-spacing: .035em; text-align: left; text-transform: uppercase; white-space: normal; cursor: pointer; }
+.bd-table td { height: auto; min-height: 45px; padding: 10px 11px; overflow: visible; border-bottom: 1px solid #eceef2; color: #374151; font-size: 13px; line-height: 1.45; text-overflow: clip; white-space: normal; overflow-wrap: anywhere; word-break: normal; vertical-align: top; }
+.bd-table tbody tr:last-child td { border-bottom: 0; }
+.bd-table tbody tr:hover td { background: #faf6fb; }
+.bd-id-cell { color: #64236e !important; font-weight: 700; }
+.bd-badge { display: inline-flex; min-height: 23px; align-items: center; padding: 0 8px; border-radius: 999px; color: #5f2868; background: #f2e8f4; font-size: 11px; font-weight: 700; }
+.bd-utility { display: inline-grid; min-width: 30px; height: 25px; place-items: center; border-radius: 6px; font-size: 11px; font-weight: 800; }
+.bd-utility-el { color: #196b47; background: #e7f5ed; }
+.bd-utility-ca { color: #2164a2; background: #e7f1fa; }
+.bd-meter-table { min-width: 1650px; }
+.bd-meter-table th:nth-child(1) { width: 125px; }
+.bd-meter-table th:nth-child(2),
+.bd-meter-table th:nth-child(3),
+.bd-meter-table th:nth-child(4) { width: 150px; }
+.bd-meter-table th:nth-child(5),
+.bd-meter-table th:nth-child(6),
+.bd-meter-table th:nth-child(7),
+.bd-meter-table th:nth-child(8) { width: 125px; }
+.bd-meter-table th:nth-child(9),
+.bd-meter-table th:nth-child(10) { width: 350px; }
+.bd-meter-table td:nth-child(9),
+.bd-meter-table td:nth-child(10),
+.bd-long-text { white-space: normal; overflow-wrap: anywhere; word-break: normal; vertical-align: top; }
+.bd-assessment-table { min-width: 1100px; }
+.bd-assessment-table th:nth-child(1) { width: 165px; }
+.bd-assessment-table th:nth-child(2) { width: 120px; }
+.bd-assessment-table th:nth-child(3), .bd-assessment-table th:nth-child(4) { width: 300px; }
+.bd-assessment-table th:nth-child(5) { width: 135px; }
+.bd-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+@media (max-width: 1450px) {
+  .bd-toolbar { align-items: stretch; flex-direction: column; }
+  .bd-actions { justify-content: flex-end; }
+}
+@media (max-width: 800px) {
+  .bd-title-row h1 { font-size: 28px; }
+  .bd-toolbar { padding: 10px; }
+}
+@media (max-width: 600px) {
+  .bd-title-row { min-height: 130px; flex-direction: column; justify-content: flex-start; gap: 10px; }
+  .bd-record-count { margin-top: 0; }
+  .bd-actions { align-items: stretch; flex-direction: column; }
+  .bd-search { width: 100%; }
+  .bd-add-button { justify-content: center; }
+  .bd-table-panel { padding-inline: 10px; }
+}
+/* ============================================================
+   METER ACTION BAR
+   ============================================================ */
+
+.bd-meter-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 20px;
+  border-top: 1px solid #ececf1;
+  border-bottom: 1px solid #ececf1;
+  background: #fff;
+}
+
+
+/* ============================================================
+   CLICKABLE TABLE ROWS
+   ============================================================ */
+
+.bd-clickable-row {
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.bd-clickable-row:hover {
+  background: #f7f2fa;
+}
+
+.bd-clickable-row:focus {
+  outline: 2px solid #7b2182;
+  outline-offset: -2px;
+}
+
+.bd-clickable-row:active {
+  background: #f0e6f3;
+}
+
+.bd-meter-id-link {
+  color: #702278;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.bd-clickable-row:hover .bd-meter-id-link {
+  text-decoration: underline;
+}
+
+.bd-long-cell {
+  min-width: 260px;
+  max-width: 520px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.45;
+}
+
+.bd-empty-row {
+  padding: 42px !important;
+  text-align: center;
+  color: #6b7280;
+}
+
+
+/* ============================================================
+   MODAL BACKDROP
+   ============================================================ */
+
+.bd-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 28px;
+
+  background: rgba(17, 24, 39, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+
+/* ============================================================
+   METER MODAL
+   ============================================================ */
+
+.bd-meter-modal {
+  width: min(1180px, 96vw);
+  max-height: 92vh;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 1px solid #dddde5;
+  border-radius: 14px;
+
+  box-shadow:
+    0 24px 60px rgba(17, 24, 39, 0.22),
+    0 8px 24px rgba(17, 24, 39, 0.12);
+}
+
+
+/* ============================================================
+   MODAL HEADER
+   ============================================================ */
+
+.bd-modal-header {
+  flex: 0 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px 24px;
+
+  border-bottom: 1px solid #e6e6ec;
+
+  background:
+    linear-gradient(
+      100deg,
+      #faf7fb 0%,
+      #ffffff 70%
+    );
+}
+
+.bd-modal-header > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.bd-modal-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  color: #76217d;
+
+  background: #f3e9f5;
+}
+
+.bd-modal-eyebrow {
+  margin: 0 0 2px;
+
+  color: #7b2182;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.bd-modal-header h2 {
+  margin: 0;
+
+  color: #111827;
+
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.bd-modal-close {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 8px;
+
+  color: #4b5563;
+
+  background: transparent;
+
+  cursor: pointer;
+}
+
+.bd-modal-close:hover {
+  background: #f1f1f5;
+}
+
+
+/* ============================================================
+   MODAL BODY
+   ============================================================ */
+
+.bd-modal-body {
+  flex: 1 1 auto;
+
+  overflow-y: auto;
+
+  padding: 0 26px 28px;
+}
+
+
+/* ============================================================
+   FORM SECTIONS
+   ============================================================ */
+
+.bd-form-section {
+  padding: 26px 0;
+
+  border-bottom: 1px solid #ececf1;
+}
+
+.bd-form-section:last-child {
+  border-bottom: 0;
+}
+
+.bd-form-section-heading {
+  margin-bottom: 18px;
+}
+
+.bd-form-section-heading h3 {
+  margin: 0 0 4px;
+
+  color: #1f2937;
+
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.bd-form-section-heading p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+.bd-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 16px 18px;
+}
+
+
+/* ============================================================
+   FORM CONTROLS
+   ============================================================ */
+
+.bd-form-field {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+.bd-form-field > span {
+  color: #374151;
+
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.bd-form-field input,
+.bd-form-field select,
+.bd-form-field textarea {
+  width: 100%;
+
+  border: 1px solid #d6d6df;
+  border-radius: 7px;
+
+  color: #111827;
+
+  background: #ffffff;
+
+  font: inherit;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.bd-form-field input,
+.bd-form-field select {
+  min-height: 40px;
+
+  padding: 8px 11px;
+}
+
+.bd-form-field textarea {
+  min-height: 115px;
+
+  padding: 10px 12px;
+
+  resize: vertical;
+
+  line-height: 1.5;
+}
+
+.bd-form-field input:focus,
+.bd-form-field select:focus,
+.bd-form-field textarea:focus {
+  outline: none;
+
+  border-color: #7b2182;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(123, 33, 130, 0.10);
+}
+
+.bd-form-field input:disabled {
+  color: #52525b;
+
+  background: #f3f4f6;
+
+  cursor: not-allowed;
+}
+
+.bd-form-textareas {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+/* ============================================================
+   ERROR MESSAGE
+   ============================================================ */
+
+.bd-form-error {
+  margin-top: 20px;
+
+  padding: 12px 14px;
+
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+
+  color: #991b1b;
+
+  background: #fef2f2;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   MODAL FOOTER
+   ============================================================ */
+
+.bd-modal-footer {
+  flex: 0 0 auto;
+
+  min-height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 18px;
+
+  padding: 14px 24px;
+
+  border-top: 1px solid #e5e7eb;
+
+  background: #fafafa;
+}
+
+.bd-modal-footer-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bd-save-button,
+.bd-delete-button,
+.bd-cancel-button {
+  min-height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 9px 16px;
+
+  border-radius: 7px;
+
+  font-size: 13px;
+  font-weight: 650;
+
+  cursor: pointer;
+}
+
+.bd-save-button {
+  border: 1px solid #72217d;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      100deg,
+      #7b2182 0%,
+      #67216e 100%
+    );
+}
+
+.bd-save-button:hover {
+  filter: brightness(1.06);
+}
+
+.bd-cancel-button {
+  border: 1px solid #d1d5db;
+
+  color: #374151;
+
+  background: #ffffff;
+}
+
+.bd-cancel-button:hover {
+  background: #f5f5f7;
+}
+
+.bd-delete-button {
+  border: 1px solid #fecaca;
+
+  color: #b91c1c;
+
+  background: #ffffff;
+}
+
+.bd-delete-button:hover {
+  background: #fef2f2;
+}
+
+.bd-save-button:disabled,
+.bd-delete-button:disabled,
+.bd-cancel-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1050px) {
+  .bd-form-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .bd-modal-backdrop {
+    padding: 0;
+  }
+
+  .bd-meter-modal {
+    width: 100vw;
+    max-height: 100vh;
+    height: 100vh;
+
+    border-radius: 0;
+  }
+
+  .bd-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bd-form-textareas {
+    grid-template-columns: 1fr;
+  }
+
+  .bd-modal-footer {
+    align-items: stretch;
+    flex-direction: column-reverse;
+  }
+
+  .bd-modal-footer-actions {
+    width: 100%;
+  }
+
+  .bd-save-button,
+  .bd-cancel-button,
+  .bd-delete-button {
+    flex: 1;
+  }
+
+  .bd-meter-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+/* ============================================================
+   BACKGROUND DATA - CUSTOMER TABLE
+   ============================================================ */
+
+.bd-inline-record-count {
+  margin: 18px 22px 0;
+  width: fit-content;
+}
+
+.customer-registry {
+  padding: 18px 22px 24px;
+}
+
+/* ============================================================
+   TABLE TOOLBAR
+   ============================================================ */
+
+.bd-table-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.bd-search {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  width: min(440px, 100%);
+
+  padding: 9px 12px;
+
+  border: 1px solid #d8dce4;
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #6b7280;
+}
+
+.bd-search:focus-within {
+  border-color: #7b2182;
+
+  box-shadow:
+    0 0 0 2px
+    rgba(123, 33, 130, 0.08);
+}
+
+.bd-search input {
+  width: 100%;
+
+  border: 0;
+  outline: 0;
+
+  background: transparent;
+
+  color: #111827;
+
+  font-size: 14px;
+}
+
+.bd-search input::placeholder {
+  color: #9ca3af;
+}
+
+.bd-results-count {
+  color: #6b7280;
+
+  font-size: 13px;
+
+  white-space: nowrap;
+}
+
+/* ============================================================
+   TABLE WRAPPER
+   ============================================================ */
+
+.bd-table-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: visible;
+
+  border: 1px solid #e0e3e9;
+  border-radius: 8px;
+
+  background: #ffffff;
+}
+
+/* ============================================================
+   DATA TABLE
+   ============================================================ */
+
+.bd-data-table {
+  width: 100%;
+
+  min-width: 1650px;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+}
+
+/* ============================================================
+   TABLE HEADER
+   ============================================================ */
+
+.bd-data-table th {
+  padding: 11px 13px;
+
+  border-bottom: 1px solid #dfe3e8;
+
+  background: #f5f5f8;
+
+  color: #374151;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  text-align: left;
+
+  white-space: nowrap;
+
+  vertical-align: middle;
+}
+
+/* ============================================================
+   TABLE CELLS
+   ============================================================ */
+
+.bd-data-table td {
+  padding: 10px 13px;
+
+  border-bottom: 1px solid #eceef2;
+
+  color: #374151;
+
+  font-size: 13px;
+
+  vertical-align: top;
+
+  white-space: normal;
+
+  word-break: normal;
+
+  overflow-wrap: anywhere;
+}
+
+/* ============================================================
+   ROWS
+   ============================================================ */
+
+.bd-data-table tbody tr {
+  transition:
+    background-color
+    0.12s ease;
+}
+
+.bd-data-table tbody tr:hover {
+  background: #faf7fb;
+}
+
+.bd-data-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+/* ============================================================
+   IMPORTANT CELLS
+   ============================================================ */
+
+.bd-cell-strong {
+  color: #111827;
+
+  font-weight: 600;
+}
+
+.customer-id-cell {
+  min-width: 180px;
+
+  white-space: nowrap;
+}
+
+.customer-name-cell {
+  min-width: 280px;
+
+  max-width: 420px;
+
+  white-space: normal;
+
+  overflow-wrap: anywhere;
+}
+
+.customer-comment-cell {
+  min-width: 320px;
+
+  max-width: 560px;
+
+  white-space: normal;
+
+  overflow-wrap: anywhere;
+}
+
+/* ============================================================
+   STATUS BADGES
+   ============================================================ */
+
+.bd-status-badge {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 44px;
+
+  padding: 3px 9px;
+
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  line-height: 1.3;
+}
+
+.bd-status-yes {
+  background: #e7f5eb;
+
+  color: #19733a;
+}
+
+.bd-status-no {
+  background: #f0f1f3;
+
+  color: #616772;
+}
+
+.bd-empty-value {
+  color: #9ca3af;
+}
+
+/* ============================================================
+   NO RESULTS
+   ============================================================ */
+
+.bd-no-results {
+  padding: 34px !important;
+
+  text-align: center;
+
+  color: #6b7280 !important;
+}
+
+/* ============================================================
+   EMPTY / FUTURE TAB
+   ============================================================ */
+
+.bd-empty-state {
+  display: flex;
+
+  min-height: 360px;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px;
+
+  color: #6b7280;
+
+  text-align: center;
+}
+
+.bd-empty-state h3 {
+  margin: 12px 0 5px;
+
+  color: #111827;
+
+  font-size: 18px;
+}
+
+.bd-empty-state p {
+  margin: 0;
+
+  font-size: 14px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .bd-table-controls {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+  .bd-search {
+    width: 100%;
+  }
+
+  .bd-results-count {
+    align-self: flex-end;
+  }
+}
+
+/* ============================================================
+   DENSITY TUNING - 1920x1080 DESKTOP FIRST
+   ============================================================ */
+@media (min-width: 1200px) and (max-width: 1920px) {
+  .bd-title-row { min-height: 76px; gap: 18px; }
+  .bd-title-row h1 { font-size: 27px; letter-spacing: -0.5px; }
+  .bd-eyebrow { margin-bottom: 4px; font-size: 10px; }
+  .bd-subtitle { margin-top: 5px; font-size: 13px; }
+  .bd-record-count { height: 34px; margin-top: 6px; gap: 6px; padding: 0 10px; border-radius: 6px; font-size: 11px; }
+
+  .bd-workspace { border-radius: 8px; }
+  .bd-toolbar { min-height: 52px; gap: 12px; padding: 7px 10px; }
+  .bd-tab { min-height: 32px; padding: 0 10px; border-radius: 5px; font-size: 12px; }
+  .bd-actions { gap: 6px; }
+  .bd-search { width: 190px; height: 34px; gap: 6px; padding: 0 8px; border-radius: 5px; }
+  .bd-search input { font-size: 12px; }
+  .bd-add-button { height: 34px; gap: 5px; padding: 0 11px; border-radius: 5px; font-size: 12px; }
+
+  .bd-table-panel, .customer-registry { padding: 10px 12px 6px; }
+  .bd-inline-record-count { margin: 10px 12px 0; }
+  .bd-table-heading { min-height: 38px; }
+  .bd-table-heading h2 { font-size: 14px; }
+  .bd-table-heading p, .bd-table-heading > span { font-size: 10px; }
+
+  .bd-table, .bd-meter-table, .bd-data-table { min-width: 1450px; }
+  .bd-table th, .bd-data-table th { padding: 8px; font-size: 9px; }
+  .bd-table td, .bd-data-table td { min-height: 36px; padding: 7px 8px; font-size: 11px; line-height: 1.3; }
+  .bd-sort-button { font-size: 9px; }
+  .bd-badge, .bd-status-badge { min-height: 19px; padding: 0 6px; font-size: 9px; }
+  .bd-utility { min-width: 26px; height: 21px; font-size: 9px; }
+
+  .bd-meter-actions { gap: 8px; padding: 10px 12px; }
+
+  .bd-modal-backdrop { padding: 18px; }
+  .bd-meter-modal { width: min(1000px, 94vw); max-height: 90vh; border-radius: 10px; }
+  .bd-modal-header { padding: 13px 16px; }
+  .bd-modal-icon { width: 34px; height: 34px; border-radius: 7px; }
+  .bd-modal-eyebrow { font-size: 9px; }
+  .bd-modal-header h2 { font-size: 18px; }
+  .bd-modal-close { width: 32px; height: 32px; }
+  .bd-modal-body { padding: 0 18px 18px; }
+
+  .bd-form-section { padding: 16px 0; }
+  .bd-form-section-heading { margin-bottom: 11px; }
+  .bd-form-section-heading h3 { font-size: 13px; }
+  .bd-form-section-heading p { font-size: 10px; }
+  .bd-form-grid { gap: 10px 12px; }
+  .bd-form-field { gap: 4px; }
+  .bd-form-field > span { font-size: 10px; }
+  .bd-form-field input, .bd-form-field select { min-height: 34px; padding: 6px 8px; border-radius: 5px; font-size: 11px; }
+  .bd-form-field textarea { min-height: 90px; padding: 8px 9px; border-radius: 5px; font-size: 11px; }
+
+  .bd-modal-footer { min-height: 54px; gap: 12px; padding: 9px 16px; }
+  .bd-save-button, .bd-delete-button, .bd-cancel-button { min-height: 34px; gap: 5px; padding: 6px 11px; border-radius: 5px; font-size: 11px; }
+
+  .bd-table-controls { gap: 10px; margin-bottom: 8px; }
+  .bd-results-count { font-size: 10px; }
+}
+
+@media (min-width: 1921px) {
+  .bd-title-row h1 { font-size: clamp(34px, 1.8vw, 42px); }
+  .bd-table th, .bd-data-table th { font-size: 12px; }
+  .bd-table td, .bd-data-table td { font-size: 14px; }
+  .bd-meter-modal { width: min(1280px, 92vw); }
+}
+
+/* ============================================================
+   ZERO READING STREAK
+   Meter-reading health indicator shown in the Meter Registry.
+   ============================================================ */
+
+.bd-zero-streak-cell {
+  min-width: 112px;
+  white-space: nowrap !important;
+  vertical-align: middle !important;
+}
+
+.bd-zero-streak {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+
+  min-width: 86px;
+  min-height: 27px;
+
+  padding: 4px 9px;
+
+  border: 1px solid transparent;
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+.bd-zero-streak strong {
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.bd-zero-streak span {
+  font-size: 10px;
+  font-weight: 650;
+}
+
+/* 0 periods - normal */
+.bd-zero-streak-normal {
+  color: #166534;
+  background: #ecfdf3;
+  border-color: #bbf7d0;
+}
+
+/* 1-2 periods - monitor */
+.bd-zero-streak-monitor {
+  color: #854d0e;
+  background: #fefce8;
+  border-color: #fde047;
+}
+
+/* 3-5 periods - investigate */
+.bd-zero-streak-investigate {
+  color: #c2410c;
+  background: #fff7ed;
+  border-color: #fdba74;
+}
+
+/* 6-11 periods - likely issue */
+.bd-zero-streak-likely {
+  color: #b91c1c;
+  background: #fef2f2;
+  border-color: #fca5a5;
+}
+
+/* 12+ periods - long-term zero */
+.bd-zero-streak-critical {
+  color: #ffffff;
+  background: #7f1d1d;
+  border-color: #7f1d1d;
+}
+
+/* Keep the streak readable in the compact desktop layout. */
+@media (min-width: 1200px) and (max-width: 1920px) {
+  .bd-zero-streak {
+    min-width: 74px;
+    min-height: 22px;
+    padding: 3px 7px;
+    gap: 4px;
+  }
+
+  .bd-zero-streak strong {
+    font-size: 10px;
+  }
+
+  .bd-zero-streak span {
+    font-size: 9px;
+  }
+}
+/* ============================================================
+   Zero Reading Summary
+   ============================================================ */
+
+.bd-zero-summary {
+  margin: 0 0 18px;
+}
+
+.bd-zero-summary-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.bd-zero-summary-heading h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.bd-zero-summary-heading p {
+  margin: 3px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.bd-zero-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.bd-zero-summary-card {
+  position: relative;
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 120ms ease,
+    box-shadow 120ms ease,
+    border-color 120ms ease;
+}
+
+.bd-zero-summary-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(17, 24, 39, 0.08);
+}
+
+.bd-zero-summary-card-active {
+  border-width: 2px;
+  box-shadow: 0 0 0 2px rgba(17, 24, 39, 0.06);
+}
+
+.bd-zero-summary-label {
+  display: block;
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bd-zero-summary-count {
+  display: block;
+  margin-top: 6px;
+  font-size: 24px;
+  line-height: 1;
+  color: #111827;
+}
+
+.bd-zero-summary-range {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.bd-zero-summary-all {
+  border-left: 4px solid #6b7280;
+}
+
+.bd-zero-summary-normal {
+  border-left: 4px solid #16a34a;
+}
+
+.bd-zero-summary-monitor {
+  border-left: 4px solid #ca8a04;
+}
+
+.bd-zero-summary-investigate {
+  border-left: 4px solid #ea580c;
+}
+
+.bd-zero-summary-likely {
+  border-left: 4px solid #dc2626;
+}
+
+.bd-zero-summary-critical {
+  border-left: 4px solid #7f1d1d;
+}
+
+@media (max-width: 1100px) {
+  .bd-zero-summary-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 650px) {
+  .bd-zero-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+/* ============================================================
+   CUSTOMER MASTER REGISTRY
+   New Customer Master data model
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   CUSTOMER TABLE
+   ------------------------------------------------------------ */
+
+.customer-registry {
+  padding: 18px 22px 24px;
+}
+
+.customer-registry .bd-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+
+  border: 1px solid #e0e3e9;
+  border-radius: 8px;
+
+  background: #ffffff;
+}
+
+/*
+  New customer master has fewer fields than the old
+  FY-based customer dataset, so it does not need the
+  old 1650px minimum width.
+*/
+.customer-registry .bd-data-table {
+  width: 100%;
+  min-width: 1320px;
+
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+
+/* ============================================================
+   CUSTOMER COLUMN WIDTHS
+   ============================================================ */
+
+/* Customer ID */
+.customer-registry
+.bd-data-table th:nth-child(1) {
+  width: 125px;
+}
+
+/* CUBE Customer Name */
+.customer-registry
+.bd-data-table th:nth-child(2) {
+  min-width: 210px;
+}
+
+/* NextGen Name(s) */
+.customer-registry
+.bd-data-table th:nth-child(3) {
+  min-width: 260px;
+}
+
+/* UMM Name */
+.customer-registry
+.bd-data-table th:nth-child(4) {
+  min-width: 150px;
+}
+
+/* Customer Type */
+.customer-registry
+.bd-data-table th:nth-child(5) {
+  min-width: 135px;
+}
+
+/* Report Type */
+.customer-registry
+.bd-data-table th:nth-child(6) {
+  min-width: 125px;
+}
+
+/* Rate Class */
+.customer-registry
+.bd-data-table th:nth-child(7) {
+  min-width: 115px;
+}
+
+/* Active */
+.customer-registry
+.bd-data-table th:nth-child(8) {
+  width: 95px;
+}
+
+/* Created */
+.customer-registry
+.bd-data-table th:nth-child(9) {
+  width: 115px;
+}
+
+/* Inactive */
+.customer-registry
+.bd-data-table th:nth-child(10) {
+  width: 115px;
+}
+
+/* Comment */
+.customer-registry
+.bd-data-table th:nth-child(11) {
+  min-width: 260px;
+}
+
+
+/* ============================================================
+   CUSTOMER ROW
+   ============================================================ */
+
+.customer-registry
+.bd-data-table tbody tr {
+  transition:
+    background-color 0.12s ease,
+    opacity 0.12s ease;
+}
+
+.customer-registry
+.bd-data-table tbody tr:hover {
+  background: #faf7fb;
+}
+
+
+/* ============================================================
+   CUSTOMER ID
+   ============================================================ */
+
+.customer-id-cell {
+  min-width: 120px;
+
+  color: #67216e;
+
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   CUSTOMER NAME
+   CUBE's canonical customer name
+   ============================================================ */
+
+.customer-name-cell {
+  min-width: 210px;
+  max-width: 360px;
+
+  color: #111827;
+
+  font-weight: 650;
+
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+
+/* ============================================================
+   NEXTGEN NAMES
+   Supports multiple source-system names mapped to one customer
+   ============================================================ */
+
+.customer-nextgen-cell {
+  min-width: 260px;
+  max-width: 420px;
+
+  white-space: normal;
+}
+
+.customer-nextgen-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 5px;
+}
+
+.customer-nextgen-tag {
+  display: inline-flex;
+  align-items: center;
+
+  min-height: 24px;
+
+  padding: 3px 8px;
+
+  border: 1px solid #ded6e2;
+  border-radius: 6px;
+
+  color: #5f2868;
+  background: #f8f2f9;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  line-height: 1.3;
+}
+
+
+/* ============================================================
+   UMM NAME
+   ============================================================ */
+
+.customer-umm-cell {
+  min-width: 150px;
+
+  color: #374151;
+
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   CUSTOMER COMMENT
+   ============================================================ */
+
+.customer-comment-cell {
+  min-width: 260px;
+  max-width: 440px;
+
+  white-space: normal;
+
+  overflow-wrap: anywhere;
+
+  line-height: 1.4;
+}
+
+
+/* ============================================================
+   ACTIVE / INACTIVE STATUS
+   ============================================================ */
+
+.customer-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 66px;
+  min-height: 25px;
+
+  padding: 3px 9px;
+
+  border: 1px solid transparent;
+  border-radius: 999px;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  line-height: 1;
+
+  white-space: nowrap;
+}
+
+.customer-status-active {
+  color: #166534;
+
+  background: #ecfdf3;
+
+  border-color: #bbf7d0;
+}
+
+.customer-status-inactive {
+  color: #6b7280;
+
+  background: #f3f4f6;
+
+  border-color: #d1d5db;
+}
+
+
+/* ============================================================
+   INACTIVE CUSTOMER ROW
+   Keep historical records visible but visually distinguish them.
+   ============================================================ */
+
+.customer-row-inactive td {
+  background: #fafafa;
+
+  color: #6b7280;
+}
+
+.customer-row-inactive
+.customer-name-cell {
+  color: #6b7280;
+}
+
+.customer-row-inactive
+.customer-id-cell {
+  color: #8b728f;
+}
+
+.customer-row-inactive:hover td {
+  background: #f6f3f7;
+}
+
+
+/* ============================================================
+   CUSTOMER DATES
+   ============================================================ */
+
+.customer-date-cell {
+  min-width: 110px;
+
+  color: #4b5563;
+
+  font-size: 12px;
+
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   CUSTOMER FILTER / STATUS CONTROLS
+   ============================================================ */
+
+.customer-filter-bar {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.customer-filter-button {
+  min-height: 34px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  padding: 0 11px;
+
+  border: 1px solid #d9dce3;
+  border-radius: 6px;
+
+  color: #4b5563;
+
+  background: #ffffff;
+
+  font-size: 12px;
+  font-weight: 650;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.15s ease,
+    background-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.customer-filter-button:hover {
+  border-color: #8a4a92;
+
+  color: #71217d;
+
+  background: #faf7fb;
+}
+
+.customer-filter-button-active {
+  border-color: #72217d;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      110deg,
+      #342a83 0%,
+      #662580 100%
+    );
+}
+
+.customer-filter-button-active:hover {
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      110deg,
+      #342a83 0%,
+      #662580 100%
+    );
+}
+
+
+/* ============================================================
+   ACTIVATE / DEACTIVATE BUTTON
+   Replaces permanent Delete Customer action.
+   ============================================================ */
+
+.bd-status-toggle-button {
+  min-height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  padding: 9px 16px;
+
+  border-radius: 7px;
+
+  font-size: 13px;
+  font-weight: 650;
+
+  white-space: nowrap;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+
+/* ------------------------------------------------------------
+   DEACTIVATE
+   ------------------------------------------------------------ */
+
+.bd-deactivate-button {
+  border: 1px solid #e5a6a6;
+
+  color: #a61b1b;
+
+  background: #ffffff;
+}
+
+.bd-deactivate-button:hover {
+  border-color: #dc7777;
+
+  background: #fff5f5;
+}
+
+
+/* ------------------------------------------------------------
+   ACTIVATE
+   ------------------------------------------------------------ */
+
+.bd-activate-button {
+  border: 1px solid #86c99b;
+
+  color: #166534;
+
+  background: #ffffff;
+}
+
+.bd-activate-button:hover {
+  border-color: #5caf76;
+
+  background: #f0fdf4;
+}
+
+
+/* ------------------------------------------------------------
+   DISABLED STATUS BUTTON
+   ------------------------------------------------------------ */
+
+.bd-status-toggle-button:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+}
+
+
+/* ============================================================
+   READ-ONLY CUSTOMER ID
+   ============================================================ */
+
+.customer-id-readonly {
+  color: #52525b !important;
+
+  background: #f3f4f6 !important;
+
+  cursor: not-allowed;
+}
+
+
+/* ============================================================
+   NEXTGEN NAME EDITOR
+   ============================================================ */
+
+.customer-nextgen-editor {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.customer-nextgen-editor-row {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.customer-nextgen-editor-row input {
+  flex: 1;
+  min-width: 0;
+}
+
+.customer-nextgen-remove {
+  width: 38px;
+  height: 38px;
+
+  flex: 0 0 38px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #e2e4e9;
+  border-radius: 6px;
+
+  color: #6b7280;
+
+  background: #ffffff;
+
+  cursor: pointer;
+}
+
+.customer-nextgen-remove:hover {
+  border-color: #fecaca;
+
+  color: #b91c1c;
+
+  background: #fef2f2;
+}
+
+.customer-nextgen-add {
+  width: fit-content;
+
+  min-height: 34px;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 0 11px;
+
+  border: 1px solid #d8d0dc;
+  border-radius: 6px;
+
+  color: #67216e;
+
+  background: #ffffff;
+
+  font-size: 12px;
+  font-weight: 650;
+
+  cursor: pointer;
+}
+
+.customer-nextgen-add:hover {
+  border-color: #8a4a92;
+
+  background: #faf7fb;
+}
+
+
+/* ============================================================
+   CUSTOMER MODAL
+   ============================================================ */
+
+.bd-customer-modal {
+  width: min(1050px, 96vw);
+
+  max-height: 92vh;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  border: 1px solid #dddde5;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 24px 60px rgba(17, 24, 39, 0.22),
+    0 8px 24px rgba(17, 24, 39, 0.12);
+}
+
+
+/* ============================================================
+   CUSTOMER FORM LAYOUT
+   ============================================================ */
+
+.customer-form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 16px 18px;
+}
+
+.customer-form-span-2 {
+  grid-column: span 2;
+}
+
+.customer-form-span-3 {
+  grid-column: 1 / -1;
+}
+
+
+/* ============================================================
+   CUSTOMER LIFECYCLE SECTION
+   ============================================================ */
+
+.customer-lifecycle {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 16px;
+
+  padding: 14px;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+
+  background: #fafafa;
+}
+
+.customer-lifecycle-item {
+  min-width: 0;
+}
+
+.customer-lifecycle-label {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #6b7280;
+
+  font-size: 11px;
+  font-weight: 650;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.04em;
+}
+
+.customer-lifecycle-value {
+  color: #111827;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   CUSTOMER RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1050px) {
+  .customer-form-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .customer-form-span-3 {
+    grid-column: 1 / -1;
+  }
+
+  .customer-lifecycle {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+}
+
+
+@media (max-width: 720px) {
+  .customer-registry {
+    padding: 12px;
+  }
+
+  .customer-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-form-span-2,
+  .customer-form-span-3 {
+    grid-column: auto;
+  }
+
+  .customer-lifecycle {
+    grid-template-columns: 1fr;
+  }
+
+  .customer-filter-bar {
+    width: 100%;
+
+    overflow-x: auto;
+  }
+
+  .customer-filter-button {
+    flex: 0 0 auto;
+  }
+
+  .bd-customer-modal {
+    width: 100vw;
+    height: 100vh;
+    max-height: 100vh;
+
+    border-radius: 0;
+  }
+
+  .bd-status-toggle-button {
+    width: 100%;
+  }
+}
+
+
+/* ============================================================
+   COMPACT 1920x1080 CUSTOMER VIEW
+   ============================================================ */
+
+@media (min-width: 1200px) and (max-width: 1920px) {
+  .customer-registry {
+    padding: 10px 12px 8px;
+  }
+
+  .customer-registry
+  .bd-data-table {
+    min-width: 1200px;
+  }
+
+  .customer-nextgen-tag {
+    min-height: 20px;
+
+    padding: 2px 6px;
+
+    font-size: 9px;
+  }
+
+  .customer-status {
+    min-width: 56px;
+    min-height: 21px;
+
+    padding: 2px 7px;
+
+    font-size: 9px;
+  }
+
+  .customer-date-cell {
+    font-size: 10px;
+  }
+
+  .bd-status-toggle-button {
+    min-height: 34px;
+
+    padding: 6px 11px;
+
+    border-radius: 5px;
+
+    font-size: 11px;
+  }
+
+  .customer-form-grid {
+    gap: 10px 12px;
+  }
+
+  .customer-lifecycle {
+    gap: 10px;
+
+    padding: 10px;
+  }
+
+  .customer-lifecycle-label {
+    font-size: 9px;
+  }
+
+  .customer-lifecycle-value {
+    font-size: 11px;
+  }
+}
